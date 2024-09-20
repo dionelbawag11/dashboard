@@ -1,0 +1,28 @@
+<div class="am-user-identity-block">
+    <ul id="menu">
+        <li>
+            <span class="am-user-identity-block_login" style="color: white;"><?php p($di->user->login) ?></span>
+            <ul>
+                <li>
+                    <a href="<?php echo $this->url('profile') ?>"><i style="padding-right: 10px;"class="fas fa-user pd-right-small"></i>
+                    <?php __e('Account') ?>
+                </a>
+                </li>
+                <li>
+                    <a href="<?php echo $this->url('cart') ?>"><i class="fas fa-shopping-cart" style="padding-right: 10px;"></i>
+                    <?php __e('Cart') ?>
+                </a>
+                </li>
+                <li>
+                    <a href="<?php echo $this->url('helpdesk') ?>"><i style="padding-right: 10px;"class="fas fa-question-circle pd-right-small"></i>
+                    <?php __e('Help') ?>
+                </a>
+                </li>
+                <li>
+                    <a style="padding-right: 10px;"href="<?php echo $this->url('logout') ?>"><i class="fas fa-sign-out-alt pd-right-small"></i>
+                        <?php __e('Logout') ?></a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

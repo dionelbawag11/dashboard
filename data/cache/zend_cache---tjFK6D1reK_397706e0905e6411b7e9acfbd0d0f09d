@@ -1,0 +1,112 @@
+a:4:{s:4:"data";s:6742:"s:6732:"<div class="admin-last admin-lastusers">
+    <h2>Last 5 Customers</h2>
+    <div class="am-grid-container">
+        <table class="am-grid grid-no-highlight">
+            <tr>
+                <th class="helper-corner-left">User</th>
+                <th>Status</th>
+                <th class="container-width-narrow-hide">Added</th>
+                <th class="helper-corner-right">Payments</th>
+            </tr>
+                        <tr class="am-grid-row even">
+                <td>                        <strong>Walter White</strong>
+                        (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=116" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=116">walter</a>)
+                                        <br />
+                    walterwhite@gmail.com</td>
+                <td>
+                    <span class="user-status user-status-active">Active</span>                </td>
+                <td class="container-width-narrow-hide"><time datetime="2024-09-19T12:14:07+00:00" title="22 hrs ago">
+                                            09/19/24<br /><small style="color:#aaa">12:14 PM</small>
+                                        </time></td>
+                <td>
+                                            Never                                    </td>
+            </tr>
+            <tr class="am-grid-row even">
+                <td colspan="4" class="container-width-narrow-show">
+                    <div class="admin-last_time">
+                        &#x1f550; <time datetime="2024-09-19T12:14:07+00:00" title="22 hrs ago">09/19/24, 12:14 PM</time>
+                    </div>
+                </td>
+            </tr>
+                        <tr class="am-grid-row odd">
+                <td>                        <strong>Saul Goodman</strong>
+                        (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=115" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=115">saul</a>)
+                                        <br />
+                    saulgoodman@gmail.com</td>
+                <td>
+                    <span class="user-status user-status-active">Active</span>                </td>
+                <td class="container-width-narrow-hide"><time datetime="2024-09-19T11:33:07+00:00" title="23 hrs ago">
+                                            09/19/24<br /><small style="color:#aaa">11:33 AM</small>
+                                        </time></td>
+                <td>
+                                            <a class="link" href="/moodle400/dashboard/admin-user-payments/index/user_id/115">2 - $33.00</a>
+                                    </td>
+            </tr>
+            <tr class="am-grid-row odd">
+                <td colspan="4" class="container-width-narrow-show">
+                    <div class="admin-last_time">
+                        &#x1f550; <time datetime="2024-09-19T11:33:07+00:00" title="23 hrs ago">09/19/24, 11:33 AM</time>
+                    </div>
+                </td>
+            </tr>
+                        <tr class="am-grid-row even">
+                <td>                        <a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=114" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=114">kqzwwpxzasiuvwfknalbzxpck</a>
+                                        <br />
+                    </td>
+                <td>
+                    <span class="user-status user-status-pending">Pending</span>                </td>
+                <td class="container-width-narrow-hide"><time datetime="2024-09-10T04:34:36+00:00" title="10 days ago">
+                                            09/10/24<br /><small style="color:#aaa">04:34 AM</small>
+                                        </time></td>
+                <td>
+                                            Never                                    </td>
+            </tr>
+            <tr class="am-grid-row even">
+                <td colspan="4" class="container-width-narrow-show">
+                    <div class="admin-last_time">
+                        &#x1f550; <time datetime="2024-09-10T04:34:36+00:00" title="10 days ago">09/10/24, 04:34 AM</time>
+                    </div>
+                </td>
+            </tr>
+                        <tr class="am-grid-row odd">
+                <td>                        <a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=113" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=113">kkmamgsugusuynstqqvm</a>
+                                        <br />
+                    </td>
+                <td>
+                    <span class="user-status user-status-pending">Pending</span>                </td>
+                <td class="container-width-narrow-hide"><time datetime="2024-09-10T04:34:35+00:00" title="10 days ago">
+                                            09/10/24<br /><small style="color:#aaa">04:34 AM</small>
+                                        </time></td>
+                <td>
+                                            Never                                    </td>
+            </tr>
+            <tr class="am-grid-row odd">
+                <td colspan="4" class="container-width-narrow-show">
+                    <div class="admin-last_time">
+                        &#x1f550; <time datetime="2024-09-10T04:34:35+00:00" title="10 days ago">09/10/24, 04:34 AM</time>
+                    </div>
+                </td>
+            </tr>
+                        <tr class="am-grid-row even">
+                <td>                        <a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=112" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=112">qwzuvpopusgul</a>
+                                        <br />
+                    </td>
+                <td>
+                    <span class="user-status user-status-pending">Pending</span>                </td>
+                <td class="container-width-narrow-hide"><time datetime="2024-09-10T04:34:35+00:00" title="10 days ago">
+                                            09/10/24<br /><small style="color:#aaa">04:34 AM</small>
+                                        </time></td>
+                <td>
+                                            Never                                    </td>
+            </tr>
+            <tr class="am-grid-row even">
+                <td colspan="4" class="container-width-narrow-show">
+                    <div class="admin-last_time">
+                        &#x1f550; <time datetime="2024-09-10T04:34:35+00:00" title="10 days ago">09/10/24, 04:34 AM</time>
+                    </div>
+                </td>
+            </tr>
+                    </table>
+    </div>
+</div>
+";";s:8:"lifetime";i:2592000;s:6:"expire";i:1729421383;s:8:"priority";i:8;}

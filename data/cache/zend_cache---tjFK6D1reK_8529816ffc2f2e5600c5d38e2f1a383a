@@ -1,0 +1,83 @@
+a:4:{s:4:"data";s:2284:"s:2274:"<h2>Today<span class="widget-title-info"> &middot;
+            09/20/24    </span></h2>
+<div class="admin-dashboard-wrapper">
+<table class="admin-dashboard">
+    <tr>
+        <td class="first">
+                        <dl>
+    <dt>Payments</dt>
+    <dd>
+                    0
+            </dd>
+</dl>
+                        <dl>
+    <dt>Refunds</dt>
+    <dd>
+                    0
+            </dd>
+</dl>
+                                            </td>
+        <td>
+                        <dl>
+    <dt>Registrations</dt>
+        <dd>
+                    0
+            </dd>
+</dl>
+                        <dl>
+    <dt>Cancellations</dt>
+        <dd>
+                    0
+            </dd>
+</dl>
+                        <dl>
+    <dt>Rebills <small title="09/21/24" style="opacity: .7;">next day</small></dt>
+        <dd>
+                    0
+            </dd>
+</dl>
+                    </td>
+    </tr>
+</table>
+</div><h2>This Week (Sun-Sat)<span class="widget-title-info"> &middot;
+            09/15/24&ndash;09/21/24    </span></h2>
+<div class="admin-dashboard-wrapper">
+<table class="admin-dashboard">
+    <tr>
+        <td class="first">
+                        <dl>
+    <dt>Payments</dt>
+    <dd>
+                    <a class="link" href="/moodle400/dashboard/default/admin-payments/p/index/index?_payment_filter%5Bdatf%5D=dattm&amp;_payment_filter%5Bdat1%5D=09%2F15%2F24&amp;_payment_filter%5Bdat2%5D=09%2F21%2F24">2 / $33.00</a>
+            </dd>
+</dl>
+                        <dl>
+    <dt>Refunds</dt>
+    <dd>
+                    0
+            </dd>
+</dl>
+                                            </td>
+        <td>
+                        <dl>
+    <dt>Registrations</dt>
+        <dd>
+                    <a class="link" href="/moodle400/dashboard/admin-users/index?_u_search%5Badded-between%5D%5Bstart%5D=09%2F15%2F24&amp;_u_search%5Badded-between%5D%5Bstop%5D=09%2F21%2F24">2</a>
+            </dd>
+</dl>
+                        <dl>
+    <dt>Cancellations</dt>
+        <dd>
+                    0
+            </dd>
+</dl>
+                        <dl>
+    <dt>Rebills <small title="09/21/24&ndash;09/28/24" style="opacity: .7;">next 7 days</small></dt>
+        <dd>
+                    0
+            </dd>
+</dl>
+                    </td>
+    </tr>
+</table>
+</div>";";s:8:"lifetime";i:2592000;s:6:"expire";i:1729421383;s:8:"priority";i:8;}

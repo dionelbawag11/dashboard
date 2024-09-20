@@ -1,0 +1,42 @@
+<?php
+/**
+ * template to display subusers for a reseller
+ */
+$title = ___('Subusers');
+$this->setLayout('member/layout.phtml');
+?>
+<?php if (@$message) : ?>
+<div class="am-info"><?php echo $message ?></div>
+<?php endif; ?>
+
+<?php echo $content ?>
+
+<div id="am-block-subusers-reseller-package">
+    <h1><?php __e('Your Reseller Packages') ?></h1>
+
+    <div class="am-grid-container">
+        <table class="am-grid">
+            <tr>
+                <th><?php __e('Product')?></th>
+                <th><?php __e('Purchased Credits')?></th>
+                <th><?php __e('Active subusers')?></th>
+                <th><?php __e('Pending subusers')?></th>
+                <th><?php __e('Available Credits')?></th>
+            </tr>
+            <?php foreach ($subusers_count as $product_id => $r): ?>
+            <tr class="am-grid-row" style="text-align: right">
+                <td style="text-align: left"><?php if ($pr = $di->productTable->load($product_id, false)) __e($pr->title); else print '&mdash;'; ?></td>
+                <td><?php echo $r['avail_count']?></td>
+                <td><?php echo $r['active_count']?></td>
+                <td><?php echo $r['pending_count']?></td>
+                <td><strong><?php echo $r['avail_count']-$r['active_count']?></strong></td>
+            </tr>
+        <?php endforeach ?>
+        </table>
+    </div>
+</div>
+<?php include $this->_script('js.country_state.js'); ?>
+<?php
+if (!empty($invite)) :
+    echo $invite->render();
+endif;

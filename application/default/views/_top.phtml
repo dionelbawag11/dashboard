@@ -1,0 +1,17 @@
+<?php
+$user = $di->auth->getUser();
+$showMenu = $user && empty($this->layoutNoMenu);
+$showIdentityBlock = $user && empty($this->noUserIdentityBlock);
+$showLang = empty($this->layoutNoLang);
+?>
+<?php if (!defined('AM_ADMIN') || !AM_ADMIN): ?>
+    <?php if (!$showMenu && !$showIdentityBlock && $showLang) : ?>
+        <?php include $this->_script('_lang-choice.phtml'); ?>
+    <?php else: ?>
+        <?php if ($showMenu) : ?>
+            <?php include $this->_script('member/_menu.phtml'); ?>
+        <?php endif; ?>
+    <?php endif; ?>
+<?php endif; ?>
+<?php include $this->_script('_msg.phtml'); ?>
+<?php echo $this->blocks('member/top') ?>

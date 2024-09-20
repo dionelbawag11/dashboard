@@ -1,0 +1,369 @@
+<?php
+// $userTable = Am_Di::getInstance()->auth->getUser();
+
+// $activeProduct = $userTable->getActiveProductIds();
+
+// print_r($activeProduct);
+
+// foreach ($imgProduct as $imgPath) {
+//     if (!empty($imgPath)) {
+//         // Correctly combine the base URL and the image path
+//         echo '<img src="' . $this->url('data/public/' . htmlspecialchars($imgPath)) . '" alt="' . htmlspecialchars($try) . '" style="max-width: 150px; height: auto; margin: 10px;">';
+//     }
+// }
+
+// print_r($arrayValue);
+// print_r($activeProductIds);
+// echo "User ID: $userId\n";
+// echo "User Email: $userEmail\n";
+
+// foreach ($try as $title) {
+//     echo $title . "\n";  // "\n" for new line or use "<br>" if you're outputting to a browser
+// }
+
+// print_r($member_products->getTitle());
+
+// Fetch the product-to-course mapping from the database
+
+// $user = Am_Di::getInstance()->auth->getUser();
+    
+// // Get the user's active product IDs
+// $activeProductIds = $user->getActiveProductIds();
+
+// // Fetch the product-to-course mapping from am_resource_access
+// $resourceAccessTable = Am_Di::getInstance()->resourceAccessTable;
+
+// // Loop through each active product ID
+// foreach ($activeProductIds as $productId) {
+//     // Look for a matching record in the resource access table
+//     $resourceAccess = $resourceAccessTable->findFirstBy([
+//         'resource_type' => 'integration', // Check for integration type
+//         'fn' => 'product_id',             // Check that the 'fn' field is 'product_id'
+//         'id' => $productId,               // Ensure the 'id' field matches the productId
+//     ]);
+
+//     // Check if a matching resource was found
+//     if ($resourceAccess) {
+//         $resourceId = $resourceAccess->resource_id; // Resource ID to be used
+
+//         // Now, look up the IntegrationTable using the resourceId
+//         $integration = Am_Di::getInstance()->integrationTable->findFirstBy(['integration_id' => $resourceId]);
+
+//         // If integration is found, print the gr value
+//         if ($integration) {
+//             $vars = $integration->vars; // Fetch the vars field
+            
+//             // Unserialize the vars field to convert it into an array
+//             $varsArray = unserialize($vars);
+            
+//             // Check if the 'gr' key exists and display its value
+//             if (isset($varsArray['gr'])) {
+//                 echo "Product ID $productId is mapped to Resource ID $resourceId. GR Value: " . htmlspecialchars($varsArray['gr']) . "<br>";
+//             } else {
+//                 echo "Product ID $productId is mapped to Resource ID $resourceId, but 'gr' key is not set.<br>";
+//             }
+//         }
+//     } 
+// }
+// ?>
+
+<?php if ($member_products || $member_future_products): ?>
+    <ul id="member-subscriptions" class="am-widget-list am-list-subscriptions grid-view">
+        <div class="settings-container">
+            <?php if (count($member_products) + count($member_future_products) > 5): ?>
+                <div class="am-input-filter-wrapper" data-search-scope="subscription"
+                    style="width: 200px; margin-left: 10px; border-radius: 8px;">
+                    <div class="am-input-filter-inner-wrapper">
+                        <input class="am-input-filter" type="text" name="q" autocomplete="off"
+                            placeholder="<?php __e('Type to Filter…') ?>" />
+                        <div class="am-input-filter-empty">&nbsp;</div>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <!-- Icons for Display Options -->
+            <div id="display-options" class="display-options" style="margin-left: 20px; margin-top: 2px;">
+                <span id="grid-view-icon" class="view-icon active" onclick="changeView('grid')">
+                    <i class="fa fa-list"></i> <!-- List icon -->
+                </span>
+                <span id="list-view-icon" class="view-icon" onclick="changeView('list')">
+                    <i class="fa fa-th-large"></i> <!-- Grid icon -->
+                </span>
+                <span id="accordion-view-icon" class="view-icon" onclick="changeView('accordion')">
+                    <i class="fa fa-caret-down"></i> <!-- Accordion icon -->
+                </span>
+            </div>
+        </div>
+        <div id="subscription-tabs" class="subscription-tabs">
+            <span id="all-tab" class="tab active" onclick="filterSubscriptions('all')">All</span>
+            <span id="expires-tab" class="tab" onclick="filterSubscriptions('expires')">Expires</span>
+            <span id="next-bill-tab" class="tab" onclick="filterSubscriptions('next-bill')">Next Bill</span>
+            <span id="lifetime-tab" class="tab" onclick="filterSubscriptions('lifetime')">Lifetime</span>
+        </div>
+
+        <!-- Grid View -->
+        <div id="grid-view" class="view-mode grid-view" style="display: block;">
+            <?php foreach ($member_products as $p): ?>
+                <li class="subscription-item grid-item" style="min-height: auto;" data-search-target="subscription"
+                    data-title="<?php p(strtolower($p->getTitle())) ?>" id="product-item-<?php p($p->pk()) ?>">
+                    <span class="am-list-subscriptions-title"
+                        style="display: inline-block; font-weight: bold; font-size: 15px; color: #333;">
+                        <?php if ($_url = $p->getDashboardUrl()): ?>
+                            <a href="<?php p($_url) ?>"
+                                style="text-decoration: none; color: #333;"><?php echo $p->getTitle(); ?></a>
+                        <?php else: ?>
+                            <strong><?php echo $p->getTitle(); ?></strong>
+                        <?php endif; ?>
+                    </span>
+                    <span class="am-list-subscriptions-date" data-status="<?php
+                    if ($products_rebill[$p->pk()]) {
+                        echo 'rebill';
+                    } elseif ($products_expire[$p->pk()] == Am_Period::MAX_SQL_DATE) {
+                        echo 'lifetime';
+                    } else {
+                        echo 'expires';
+                    }
+                    ?>" style="display: inline-block; font-size: 0.9em; color: #666;">
+                        <?php if ($products_rebill[$p->pk()]): ?>
+                            <span class="am-list-subscriptions-date_rebill"><?php __e('next bill') ?> <span
+                                    class="am-list-subscriptions-date_rebill_date"
+                                    data-date="<?= $products_rebill[$p->pk()] ?>"><?php echo amDate($products_rebill[$p->pk()]); ?></span></span>
+                        <?php elseif ($products_expire[$p->pk()] == Am_Period::MAX_SQL_DATE): ?>
+                            <span class="am-list-subscriptions-date_lifetime"><?php __e('Lifetime') ?></span>
+                        <?php else: ?>
+                            <span class="am-list-subscriptions-date_expires"><?php __e('expires') ?> <span
+                                    class="am-list-subscriptions-date_expires_date"
+                                    data-date="<?= $products_expire[$p->pk()] ?>"><?php echo amDate($products_expire[$p->pk()]); ?></span></span>
+                        <?php endif ?>
+                    </span>
+                </li>
+            <?php endforeach; ?>
+
+            <?php foreach ($member_future_products as $p): ?>
+                <li class="subscription-item grid-item future-product" data-search-target="subscription"
+                    data-title="<?php p(strtolower($p->getTitle())) ?>" id="product-item-<?php p($p->pk()) ?>">
+                    <span class="am-list-subscriptions-title" style="font-weight: bold; font-size: 1.2em; color: #333;">
+                        <?php echo $p->getTitle(); ?>
+                    </span>
+                    <span class="am-list-subscriptions-date" data-status="<?php
+                    if ($products_rebill[$p->pk()]) {
+                        echo 'rebill';
+                    } elseif ($products_expire[$p->pk()] == Am_Period::MAX_SQL_DATE) {
+                        echo 'lifetime';
+                    } else {
+                        echo 'expires';
+                    }
+                    ?>" style="font-size: 0.9em; color: #666;">
+                        <span class="am-list-subscriptions-date_future"><?php __e('begins') ?> <span
+                                class="am-list-subscriptions-date_future_date"
+                                data-date="<?= $products_begin[$p->pk()] ?>"><?php echo amDate($products_begin[$p->pk()]); ?></span></span>
+                    </span>
+                    <div class="am-list-subscriptions-desc"
+                        style="white-space: normal; font-size: 0.9em; color: #555; margin-top: 10px;">
+                        <?php echo ___($p->description); ?>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </div>
+        <!-- List View -->
+        <div id="list-view" class="view-mode list-view" style="display: none;">
+            <?php foreach ($member_products as $p): ?>
+                <?php
+                $imgProduct = Am_Di::getInstance()->db->selectCell("SELECT img_orig_path FROM ?_product WHERE product_id = ?", $p->product_id); ?>
+                <li class="subscription-item list-item" data-search-target="subscription"
+                    data-title="<?php p(strtolower($p->getTitle())) ?>" id="product-item-<?php p($p->pk()) ?>">
+                    <div>
+                        <?php if (!empty($imgProduct)): ?>
+                            <div>
+                                <?php echo '<img src="' . $this->url('data/public/' . htmlspecialchars($imgProduct)) . '" class="active-subs-product-img">'; ?>
+                            </div>
+                        <?php else: ?>
+
+                        <?php endif; ?>
+                    </div>
+                    <span class="am-list-subscriptions-title"
+                        style="display: inline-block; font-weight: bold; font-size: 1.2em; color: #333;">
+                        <?php if ($_url = $p->getDashboardUrl()): ?>
+                            <a href="<?php p($_url) ?>"><?php echo $p->getTitle(); ?></a>
+                        <?php else: ?>
+                            <strong><?php echo $p->getTitle(); ?></strong>
+                        <?php endif; ?>
+                    </span>
+                    <span class="am-list-subscriptions-date" data-status="<?php
+                    if ($products_rebill[$p->pk()]) {
+                        echo 'rebill';
+                    } elseif ($products_expire[$p->pk()] == Am_Period::MAX_SQL_DATE) {
+                        echo 'lifetime';
+                    } else {
+                        echo 'expires';
+                    }
+                    ?>" style="display: inline-block; font-size: 0.9em; color: #666;">
+                        <?php if ($products_rebill[$p->pk()]): ?>
+                            <span class="am-list-subscriptions-date_rebill"><?php __e('next bill') ?> <span
+                                    class="am-list-subscriptions-date_rebill_date"
+                                    data-date="<?= $products_rebill[$p->pk()] ?>"><?php echo amDate($products_rebill[$p->pk()]); ?></span></span>
+                        <?php elseif ($products_expire[$p->pk()] == Am_Period::MAX_SQL_DATE): ?>
+                            <span class="am-list-subscriptions-date_lifetime"><?php __e('Lifetime') ?></span>
+                        <?php else: ?>
+                            <span class="am-list-subscriptions-date_expires"><?php __e('expires') ?> <span
+                                    class="am-list-subscriptions-date_expires_date"
+                                    data-date="<?= $products_expire[$p->pk()] ?>"><?php echo amDate($products_expire[$p->pk()]); ?></span></span>
+                        <?php endif ?>
+                    </span>
+                    <span class="am-list-subscriptions-link">
+                        <?php if (isset($products_cancel[$p->pk()]) && $products_cancel[$p->pk()]): ?>
+                            <a class="cancel-subscription local-link" href="<?php p($products_cancel[$p->pk()]) ?>"
+                                data-popup-title="<?php p($p->getTitle()) ?>"><?php __e("cancel") ?></a>
+                        <?php endif; ?>
+                        <?php if (isset($products_upgrade[$p->pk()]) && $products_upgrade[$p->pk()]): ?>
+                            <?php if (isset($products_cancel[$p->pk()]) && $products_cancel[$p->pk()]): ?>
+                                <span class="am-list-subscriptions_divider"></span>
+                            <?php endif; ?>
+                            <a href="javascript:;" class="upgrade-subscription local-link"
+                                data-invoice_item_id="<?php p($this->obfuscate($products_upgrade[$p->pk()]->pk())) ?>"><?php __e("upgrade") ?></a>
+                        <?php endif; ?>
+                    </span>
+                    <div class="am-list-subscriptions-desc"
+                        style="white-space: normal; font-size: 1em; color: #000000; margin-top: 5px;">
+                        <?php echo ___($p->description); ?>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+
+            <?php foreach ($member_future_products as $p): ?>
+                <li class="subscription-item list-item future-product" data-search-target="subscription"
+                    data-title="<?php p(strtolower($p->getTitle())) ?>" id="product-item-<?php p($p->pk()) ?>">
+                    <span class="am-list-subscriptions-title"><?php echo $p->getTitle(); ?></span>
+                    <span class="am-list-subscriptions-date" data-status="<?php
+                    if ($products_rebill[$p->pk()]) {
+                        echo 'rebill';
+                    } elseif ($products_expire[$p->pk()] == Am_Period::MAX_SQL_DATE) {
+                        echo 'lifetime';
+                    } else {
+                        echo 'expires';
+                    }
+                    ?>">
+                        <span class="am-list-subscriptions-date_future"><?php __e('begins') ?> <span
+                                class="am-list-subscriptions-date_future_date"
+                                data-date="<?= $products_begin[$p->pk()] ?>"><?php echo amDate($products_begin[$p->pk()]); ?></span></span>
+                    </span>
+                    <div class="am-list-subscriptions-desc"><?php echo ___($p->description); ?></div>
+                </li>
+            <?php endforeach; ?>
+        </div>
+
+        <!-- Accordion View -->
+        <div id="accordion-view" class="view-mode" style="height: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;">
+            <?php foreach ($member_products as $p): ?>
+                <div class="subscription-item accordion-item" data-search-target="subscription"
+                    data-title="<?php p(strtolower($p->getTitle())) ?>" id="product-item-<?php p($p->pk()) ?>">
+                    <div class="content">
+                        <h1>
+                            <?php if ($_url = $p->getDashboardUrl()): ?>
+                                <a href="<?php p($_url) ?>"><?php echo $p->getTitle(); ?></a>
+                            <?php else: ?>
+                                <strong><?php echo $p->getTitle(); ?></strong>
+                            <?php endif; ?>
+                        </h1>
+                        <h6 class="am-list-subscriptions-date" data-status="<?php
+                        if ($products_rebill[$p->pk()]) {
+                            echo 'rebill';
+                        } elseif ($products_expire[$p->pk()] == Am_Period::MAX_SQL_DATE) {
+                            echo 'lifetime';
+                        } else {
+                            echo 'expires';
+                        }
+                        ?>">
+                            <?php if ($products_rebill[$p->pk()]): ?>
+                                <span class="am-list-subscriptions-date_rebill"><?php __e('next bill') ?>
+                                    <span class="am-list-subscriptions-date_rebill_date"
+                                        data-date="<?= $products_rebill[$p->pk()] ?>"><?php echo amDate($products_rebill[$p->pk()]); ?></span></span>
+                            <?php elseif ($products_expire[$p->pk()] == Am_Period::MAX_SQL_DATE): ?>
+                                <span class="am-list-subscriptions-date_lifetime"><?php __e('Lifetime') ?></span>
+                            <?php else: ?>
+                                <span class="am-list-subscriptions-date_expires"><?php __e('expires') ?> <span
+                                        class="am-list-subscriptions-date_expires_date"
+                                        data-date="<?= $products_expire[$p->pk()] ?>"><?php echo amDatetime($products_expire[$p->pk()]); ?></span></span>
+                            <?php endif ?>
+                        </h6>
+                        <span class="am-list-subscriptions-link">
+                            <?php if (isset($products_cancel[$p->pk()]) && $products_cancel[$p->pk()]): ?>
+                                <a class="cancel-subscription local-link" href="<?php p($products_cancel[$p->pk()]) ?>"
+                                    data-popup-title="<?php p($p->getTitle()) ?>"><?php __e("cancel") ?></a>
+                            <?php endif; ?>
+                            <?php if (isset($products_upgrade[$p->pk()]) && $products_upgrade[$p->pk()]): ?>
+                                <?php if (isset($products_cancel[$p->pk()]) && $products_cancel[$p->pk()]): ?>
+                                    <span class="am-list-subscriptions_divider"></span>
+                                <?php endif; ?>
+                                <a href="javascript:;" class="upgrade-subscription local-link"
+                                    data-invoice_item_id="<?php p($this->obfuscate($products_upgrade[$p->pk()]->pk())) ?>"><?php __e("upgrade") ?></a>
+                            <?php endif; ?>
+                        </span>
+                        <div class="hover_content"> <!-- This div handles the hover content -->
+                            <p><?php echo ___($p->description); ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+
+            <?php foreach ($member_future_products as $p): ?>
+                <div class="subscription-item accordion-item" data-status="<?php
+                if ($products_rebill[$p->pk()]) {
+                    echo 'rebill';
+                } elseif ($products_expire[$p->pk()] == Am_Period::MAX_SQL_DATE) {
+                    echo 'lifetime';
+                } else {
+                    echo 'expires';
+                }
+                ?>">
+                    <div class="accordion-header" id="heading-future-<?php p($p->pk()) ?>"
+                        data-title="<?php p(strtolower($p->getTitle())) ?>" id="product-item-<?php p($p->pk()) ?>">
+                        <h5>
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#collapse-future-<?php p($p->pk()) ?>" aria-expanded="true"
+                                aria-controls="collapse-future-<?php p($p->pk()) ?>">
+                                <?php echo $p->getTitle(); ?>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapse-future-<?php p($p->pk()) ?>" class="collapse"
+                        aria-labelledby="heading-future-<?php p($p->pk()) ?>" data-parent="#accordion-view">
+                        <div class="accordion-body">
+                            <p>
+                                <?php echo $p->getTitle(); ?>
+                            </p>
+                            <p>
+                                <?php __e('begins') ?>: <span
+                                    class="date"><?php echo amDate($products_begin[$p->pk()]); ?></span>
+                            </p>
+                            <p><?php echo ___($p->description); ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </ul>
+<?php else: // Customer doesn't have any active subscriptions ?>
+    <div class="member-subscriptions-no">
+        <h3><?php __e('You have no active subscriptions') ?></h3>
+        <p><?php __e(
+            'Please use %sAdd/Renew subscription%s form to order or renew subscription.',
+            '<a href="' . $this->url('signup') . '">',
+            '</a>'
+        ) ?></p>
+    </div>
+<?php endif ?>
+<div class="cancel-subscription-popup" data-popup-title="<?php __e('Cancel Subscription') ?>" style="display:none">
+    <?php include $this->_script('member/_cancel.phtml') ?>
+</div>
+<?php foreach ($products_upgrade as $item): ?>
+    <?php $invoice = $di->invoiceTable->load($item->invoice_id); ?>
+    <div class="upgrade-subscription-popup upgrade-subscription-popup-<?php p($this->obfuscate($item->pk())) ?>"
+        style="display:none" data-popup-title="<?php __e('Change Subscription') ?>">
+        <?php include $this->_script('member/_upgrade.phtml') ?>
+    </div>
+<?php endforeach; ?>
