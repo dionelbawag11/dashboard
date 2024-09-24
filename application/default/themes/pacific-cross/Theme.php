@@ -330,9 +330,6 @@ CUT
             ->setLabel('Dashboard');
         $this->addElementColor($fs, 'menu_color', "User Menu Color\n" .
             'you can use any valid <a href="http://www.w3schools.com/html/html_colors.asp" class="link" target="_blank" rel="noreferrer">HTML color</a>, you can find useful color palette <a href="http://www.w3schools.com/TAGS/ref_colornames.asp" class="link" target="_blank" rel="noreferrer">here</a>');
-
-        $this->addElementColor($fs, 'try_color', "Active Subscriptions Courses Hover Color\n" .
-            'you can use any valid <a href="http://www.w3schools.com/html/html_colors.asp" class="link" target="_blank" rel="noreferrer">HTML color</a>, you can find useful color palette <a href="http://www.w3schools.com/TAGS/ref_colornames.asp" class="link" target="_blank" rel="noreferrer">here</a>');
         $label = ___('manage');
         $url = $this->getDi()->url('admin-menu');
         $fs->addHtml()

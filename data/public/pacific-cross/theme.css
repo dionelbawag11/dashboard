@@ -289,13 +289,13 @@ body {
 ul.am-tabs li.active,
 ul.am-tabs li.normal:hover,
 #menu li li a:hover {
-    background: #ff8a80;
+    background: #bbdefb;
 }
 
 ul.am-tabs li.active>a,
 ul.am-tabs li.normal>a:hover,
 #menu li li a:hover {
-    border-color: #ff8a80;
+    border-color: #bbdefb;
 }
 
 ul.am-tabs li {
@@ -309,22 +309,22 @@ ul.am-tabs li {
 }
 
 .accordion-item::before {
-    background: #ff8a80;
+    background: #0079d1;
 }
 
 .accordion-item h6 {
-    color: #ff8a80;
+    color: #0079d1;
 }
 
 .custom-card::before {
-    background: #ff8a80;
+    background: #0079d1;
 }
 
 .custom-card::before {
-    background: #ff8a80;
+    background: #0079d1;
 }
 .custom-card h6 {
-    color: #ff8a80;
+    color: #0079d1;
 }
 
 .am-page-login-no-label .am-auth-form,
@@ -493,34 +493,34 @@ ul.am-header-menu li ul {
 }
 
 #display-options .view-icon.active {
-    color: #0079d1;
+    color: #ff8a80;
 }
 
 .subscription-tabs .tab.active{
-    color: #0079d1; /* Adjust to your theme */
-    border-bottom: 2px solid #0079d1; /* Adjust to your theme */
+    color: #2a333c; /* Adjust to your theme */
+    border-bottom: 2px solid #2a333c; /* Adjust to your theme */
 }
 
 .tb-popover-wrapper:hover .tb-popover-content {
-    background: #bbdefb;
+    background: #ea80fc;
 }
 
 .tb-popover-content:before {
-    border-color: transparent transparent #bbdefb transparent;
+    border-color: transparent transparent #ea80fc transparent;
 }
 
 .faq{
-    color: #212121;
-    background-color: #ffebcd;
+    color: #ffffff;
+    background-color: #0079d1;
 }
 
 .faq.active{
-    color: #FFFFFF;
-    background-color: #2a333c;
+    color: #2a333c;
+    background-color: #ffebcd;
 }
 
 .faq.active .faq-text{
-    color: #dee7ec;
+    color: #2a333c;
 }
 
 #member-main-subscriptions-head {

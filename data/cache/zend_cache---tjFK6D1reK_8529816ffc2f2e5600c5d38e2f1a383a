@@ -1,5 +1,5 @@
-a:4:{s:4:"data";s:1897:"s:1887:"<h2>Today<span class="widget-title-info"> &middot;
-            09/22/24    </span></h2>
+a:4:{s:4:"data";s:2247:"s:2237:"<h2>Today<span class="widget-title-info"> &middot;
+            09/23/24    </span></h2>
 <div class="admin-dashboard-wrapper">
 <table class="admin-dashboard">
     <tr>
@@ -21,7 +21,7 @@ a:4:{s:4:"data";s:1897:"s:1887:"<h2>Today<span class="widget-title-info"> &middo
                         <dl>
     <dt>Registrations</dt>
         <dd>
-                    0
+                    <a class="link" href="/moodle400/dashboard/admin-users/index?_u_search%5Badded-between%5D%5Bstart%5D=09%2F23%2F24&amp;_u_search%5Badded-between%5D%5Bstop%5D=09%2F23%2F24">2</a>
             </dd>
 </dl>
                         <dl>
@@ -31,7 +31,7 @@ a:4:{s:4:"data";s:1897:"s:1887:"<h2>Today<span class="widget-title-info"> &middo
             </dd>
 </dl>
                         <dl>
-    <dt>Rebills <small title="09/23/24" style="opacity: .7;">next day</small></dt>
+    <dt>Rebills <small title="09/24/24" style="opacity: .7;">next day</small></dt>
         <dd>
                     0
             </dd>
@@ -62,7 +62,7 @@ a:4:{s:4:"data";s:1897:"s:1887:"<h2>Today<span class="widget-title-info"> &middo
                         <dl>
     <dt>Registrations</dt>
         <dd>
-                    0
+                    <a class="link" href="/moodle400/dashboard/admin-users/index?_u_search%5Badded-between%5D%5Bstart%5D=09%2F22%2F24&amp;_u_search%5Badded-between%5D%5Bstop%5D=09%2F28%2F24">2</a>
             </dd>
 </dl>
                         <dl>
@@ -72,7 +72,7 @@ a:4:{s:4:"data";s:1897:"s:1887:"<h2>Today<span class="widget-title-info"> &middo
             </dd>
 </dl>
                         <dl>
-    <dt>Rebills <small title="09/23/24&ndash;09/30/24" style="opacity: .7;">next 7 days</small></dt>
+    <dt>Rebills <small title="09/24/24&ndash;10/01/24" style="opacity: .7;">next 7 days</small></dt>
         <dd>
                     0
             </dd>
@@ -80,4 +80,4 @@ a:4:{s:4:"data";s:1897:"s:1887:"<h2>Today<span class="widget-title-info"> &middo
                     </td>
     </tr>
 </table>
-</div>";";s:8:"lifetime";i:2592000;s:6:"expire";i:1729591349;s:8:"priority";i:8;}
+</div>";";s:8:"lifetime";i:2592000;s:6:"expire";i:1729688929;s:8:"priority";i:8;}

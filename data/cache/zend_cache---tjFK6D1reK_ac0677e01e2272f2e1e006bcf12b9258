@@ -1,4 +1,4 @@
-a:4:{s:4:"data";s:1520:"s:1510:"<div class="admin-last admin-activity">
+a:4:{s:4:"data";s:5483:"s:5473:"<div class="admin-last admin-activity">
     <h2>Recent Activity</h2>
     <div class="am-grid-container">
         <table class="am-grid grid-no-highlight">
@@ -7,8 +7,56 @@ a:4:{s:4:"data";s:1520:"s:1510:"<div class="admin-last admin-activity">
                 <td>
                                                     <strong>Kai Cennat</strong>
         (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=1" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=1">kai</a>)<!--
-    --> logged in from 127.0.0.1                        <br />
-                        <time class="admin-activity_event-time" datetime="2024-09-22T09:44:02+00:00" title="09/22/24, 09:44 AM">&#x1f550; 18 min ago</time>                                    </td>
+    --> logged in from ::1                        <br />
+                        <time class="admin-activity_event-time" datetime="2024-09-23T13:08:00+00:00" title="09/23/24, 01:08 PM">&#x1f550; just now</time>                                    </td>
+            </tr>
+                        <tr
+                class="am-grid-row odd admin-activity_event admin-activity_event-signin">
+                <td>
+                                                    <strong>Howard Wolowitz</strong>
+        (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=118" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=118">howard</a>)<!--
+    --> logged in from ::1                        <br />
+                        <time class="admin-activity_event-time" datetime="2024-09-23T06:27:04+00:00" title="09/23/24, 06:27 AM">&#x1f550; 6 hrs ago</time>                                    </td>
+            </tr>
+                        <tr
+                class="am-grid-row even admin-activity_event admin-activity_event-signup">
+                <td>
+                                                    <strong>Howard Wolowitz</strong>
+        (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=118" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=118">howard</a>)<!--
+    --> registered a new account from ::1                        <br />
+                        <time class="admin-activity_event-time" datetime="2024-09-23T05:22:31+00:00" title="09/23/24, 05:22 AM">&#x1f550; 7 hrs ago</time>                                    </td>
+            </tr>
+                        <tr
+                class="am-grid-row odd admin-activity_event admin-activity_event-signin">
+                <td>
+                                                    <strong>Kim Wexler</strong>
+        (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=117" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=117">kim</a>)<!--
+    --> logged in from ::1                        <br />
+                        <time class="admin-activity_event-time" datetime="2024-09-23T05:15:30+00:00" title="09/23/24, 05:15 AM">&#x1f550; 7 hrs ago</time>                                    </td>
+            </tr>
+                        <tr
+                class="am-grid-row even admin-activity_event admin-activity_event-signup">
+                <td>
+                                                    <strong>Kim Wexler</strong>
+        (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=117" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=117">kim</a>)<!--
+    --> registered a new account from ::1                        <br />
+                        <time class="admin-activity_event-time" datetime="2024-09-23T05:15:24+00:00" title="09/23/24, 05:15 AM">&#x1f550; 7 hrs ago</time>                                    </td>
+            </tr>
+                        <tr
+                class="am-grid-row odd admin-activity_event admin-activity_event-signin">
+                <td>
+                                                    <strong>Walter White</strong>
+        (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=116" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=116">walter</a>)<!--
+    --> logged in from ::1                        <br />
+                        <time class="admin-activity_event-time" datetime="2024-09-23T03:02:31+00:00" title="09/23/24, 03:02 AM">&#x1f550; 10 hrs ago</time>                                    </td>
+            </tr>
+                        <tr
+                class="am-grid-row even admin-activity_event admin-activity_event-signin">
+                <td>
+                                                    <strong>Saul Goodman</strong>
+        (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=115" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=115">saul</a>)<!--
+    --> logged in from ::1                        <br />
+                        <time class="admin-activity_event-time" datetime="2024-09-23T03:02:00+00:00" title="09/23/24, 03:02 AM">&#x1f550; 10 hrs ago</time>                                    </td>
             </tr>
                         <tr
                 class="am-grid-row odd admin-activity_event admin-activity_event-signin">
@@ -16,9 +64,9 @@ a:4:{s:4:"data";s:1520:"s:1510:"<div class="admin-last admin-activity">
                                                     <strong>Speed Speed</strong>
         (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=3" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=3">speed</a>)<!--
     --> logged in from ::1                        <br />
-                        <time class="admin-activity_event-time" datetime="2024-09-22T09:06:57+00:00" title="09/22/24, 09:06 AM">&#x1f550; 55 min ago</time>                                    </td>
+                        <time class="admin-activity_event-time" datetime="2024-09-23T02:39:14+00:00" title="09/23/24, 02:39 AM">&#x1f550; 10 hrs ago</time>                                    </td>
             </tr>
                     </table>
     </div>
 </div>
-";";s:8:"lifetime";i:2592000;s:6:"expire";i:1729591349;s:8:"priority";i:8;}
+";";s:8:"lifetime";i:2592000;s:6:"expire";i:1729688929;s:8:"priority";i:8;}
