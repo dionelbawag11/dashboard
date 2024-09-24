@@ -6642,10 +6642,10 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 
 #member-main-subscriptions {
   border: none;
-  border-radius: none;
   box-shadow: none;
   width: auto;
   min-height: 400px;
+  padding: 1em 1em 0em 1em;
 }
 
 #member-main-unsubcribe {
@@ -7919,12 +7919,10 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 }
 
 .am-cart-layout-product .am-cart-product-content-desc-img {
-  /* Add your custom styles here */
   min-width: auto;
   max-width: max-content;
   margin-left: auto;
   margin-right: auto;
-  float: right;
   width: 500px;
   max-height: 400px;
   object-fit: none;
@@ -7943,6 +7941,12 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 
 .am-cart-layout-product {
   pointer-events: visible !important;
+}
+
+.am-cart-layout-product {
+  padding: 1.5em;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  margin-right: 1em;
 }
 
 .am-cart-layout-product .am-cart-product-content-add-container>div>div[style*="position: absolute;"] {
