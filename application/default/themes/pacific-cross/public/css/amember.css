@@ -6660,7 +6660,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 }
 #member-subscriptions {
   overflow: scroll;
-  max-height: 630px;
+  max-height: 640px;
 }
 
 .cart-buttons a {
@@ -7886,11 +7886,9 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   min-height: 700px;
   padding-top: 2em;
-  padding-bottom: 2em;
   background: white;
   border-radius: 14px;
   margin-bottom: 1em;
-
 }
 
 #widget-member-main-subscriptions #member-main-subscriptions-head{
