@@ -6380,16 +6380,18 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
   clear: both;
   height: 0;
 }
+
 .am-user-identity-block {
-  position: relative; /* Ensure the dropdown is positioned relative to this container */
+  position: relative;
+  /* Ensure the dropdown is positioned relative to this container */
 }
 
-.am-user-identity-block ul#menu > li {
+.am-user-identity-block ul#menu>li {
   position: relative;
   height: 55px;
 }
 
-.am-user-identity-block ul#menu > li > ul {
+.am-user-identity-block ul#menu>li>ul {
   position: absolute;
   background-color: #fff;
   border-radius: 12px;
@@ -6399,24 +6401,30 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 
 }
 
-.am-user-identity-block ul#menu > li:hover > ul {
-  display: block; /* Ensure the dropdown is visible on hover */
+.am-user-identity-block ul#menu>li:hover>ul {
+  display: block;
+  /* Ensure the dropdown is visible on hover */
 }
 
-.am-user-identity-block ul#menu > li > ul {
-  display: none; /* Hide the dropdown by default */
+.am-user-identity-block ul#menu>li>ul {
+  display: none;
+  /* Hide the dropdown by default */
 }
 
 /* Make sure the dropdown does not overflow or cut off */
-.am-user-identity-block ul#menu > li > ul {
-  right: 0; /* Align dropdown to the right edge if necessary */
-  left: auto; /* Override left alignment */
+.am-user-identity-block ul#menu>li>ul {
+  right: 0;
+  /* Align dropdown to the right edge if necessary */
+  left: auto;
+  /* Override left alignment */
 }
 
 @media (max-width: 768px) {
-  .am-user-identity-block ul#menu > li > ul {
-      right: auto; /* Reset right alignment on smaller screens */
-      left: 0; /* Align back to the left edge on mobile */
+  .am-user-identity-block ul#menu>li>ul {
+    right: auto;
+    /* Reset right alignment on smaller screens */
+    left: 0;
+    /* Align back to the left edge on mobile */
   }
 }
 
@@ -6658,6 +6666,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
   border: none;
   box-shadow: none;
 }
+
 #member-subscriptions {
   overflow: scroll;
   max-height: 640px;
@@ -6864,7 +6873,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
   padding: 0.4em 0.5em;
 }
 
-.am-cart .am-cart-product .am-cart-product-content-add-container{
+.am-cart .am-cart-product .am-cart-product-content-add-container {
   background: transparent;
 }
 
@@ -6873,7 +6882,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
   margin-top: auto;
 }
 
-.am-cart-layout-product .am-cart-product-content-add-container{
+.am-cart-layout-product .am-cart-product-content-add-container {
   padding: 0 !important;
 }
 
@@ -7891,7 +7900,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
   margin-bottom: 1em;
 }
 
-#widget-member-main-subscriptions #member-main-subscriptions-head{
+#widget-member-main-subscriptions #member-main-subscriptions-head {
   margin-left: 25px;
 
 }
@@ -8353,4 +8362,47 @@ div#grid-user .am-grid-container {
 .am-cart-layout-product .am-cart-product-content-add-container {
   display: block;
   flex-direction: none;
+}
+
+
+.am-cart-layout-product .am-cart-product-content-desc-img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  /* Image will take up full width of its container */
+  max-width: 90em;
+  /* Cap the maximum width */
+  height: 100%;
+  max-height: 15em;
+  object-fit: cover;
+  /* Ensure the image covers the space */
+}
+
+@media (max-width: 768px) {
+
+  /* For tablets and smaller screens */
+  .am-cart-layout-product .am-cart-product-content-desc-img {
+    max-width: 100%;
+    /* Allow the image to shrink for smaller screens */
+    height: auto;
+    /* Maintain aspect ratio */
   }
+}
+
+@media (max-width: 480px) {
+
+  /* For mobile devices */
+  .am-cart-layout-product .am-cart-product-content-desc-img {
+    max-width: 100%;
+    /* Ensure the image scales down properly */
+    height: auto;
+  }
+}
+
+.am-cart-layout-product {
+  background: white;
+}
+
+.product-container .am-cart-layout-product {
+  margin-right: 0;
+}

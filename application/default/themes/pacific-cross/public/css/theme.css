@@ -526,3 +526,9 @@ ul.am-header-menu li ul {
 #member-main-subscriptions-head {
     font-size: %font_header_size%px;
 }
+
+@media all and (max-width:500px) {
+    .am-account-toolbar .am-account-toolbar-items {
+        background: %header_top%;
+    }
+}
