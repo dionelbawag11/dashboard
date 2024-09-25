@@ -6791,6 +6791,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 }
 
 .am-cart .am-cart-product .am-cart-product-content {
+  background: white;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -8410,4 +8411,13 @@ div#grid-user .am-grid-container {
 
 .product-container .am-cart-layout-product {
   padding: 2.5em;
+}
+
+.am-cart-product-content-title a {
+  text-decoration: none;
+}
+
+.tb-popover-content .am-cart-product-content-title a {
+  text-decoration: none;
+  color: black;
 }

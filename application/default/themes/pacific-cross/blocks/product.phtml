@@ -134,9 +134,9 @@
         </div>
     </div>
     <div class="tb-popover-content">
-        <div class="am-cart-product-content-title" style="font-size: large;margin-top: 0px; margin-bottom: 0px;">
+        <div class="am-cart-product-content-title">
             <?php if (empty($displayProductDetails)): ?>
-                <a style="text-decoration: none;" href="<?php p($product_url) ?>"
+                <a href="<?php p($product_url) ?>"
                     title="<?php __e($product->title) ?>"><?= $this->strLimit(strip_tags(___($product->title)), 40) ?></a>
             <?php else: ?>
                 <h2><?php __e($product->title) ?></h2>

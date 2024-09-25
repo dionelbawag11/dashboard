@@ -8,7 +8,7 @@ a:4:{s:4:"data";s:5487:"s:5477:"<div class="admin-last admin-activity">
                                                     <strong>Speed Speed</strong>
         (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=3" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=3">speed</a>)<!--
     --> logged in from ::1                        <br />
-                        <time class="admin-activity_event-time" datetime="2024-09-25T02:45:42+00:00" title="09/25/24, 02:45 AM">&#x1f550; 3 hrs ago</time>                                    </td>
+                        <time class="admin-activity_event-time" datetime="2024-09-25T02:45:42+00:00" title="09/25/24, 02:45 AM">&#x1f550; 4 hrs ago</time>                                    </td>
             </tr>
                         <tr
                 class="am-grid-row odd admin-activity_event admin-activity_event-signin">
@@ -16,7 +16,7 @@ a:4:{s:4:"data";s:5487:"s:5477:"<div class="admin-last admin-activity">
                                                     <strong>Kai Cennat</strong>
         (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=1" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=1">kai</a>)<!--
     --> logged in from ::1                        <br />
-                        <time class="admin-activity_event-time" datetime="2024-09-25T00:37:57+00:00" title="09/25/24, 12:37 AM">&#x1f550; 5 hrs ago</time>                                    </td>
+                        <time class="admin-activity_event-time" datetime="2024-09-25T00:37:57+00:00" title="09/25/24, 12:37 AM">&#x1f550; 6 hrs ago</time>                                    </td>
             </tr>
                         <tr
                 class="am-grid-row even admin-activity_event admin-activity_event-signin">
@@ -24,7 +24,7 @@ a:4:{s:4:"data";s:5487:"s:5477:"<div class="admin-last admin-activity">
                                                     <strong>Howard Wolowitz</strong>
         (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=118" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=118">howard</a>)<!--
     --> logged in from ::1                        <br />
-                        <time class="admin-activity_event-time" datetime="2024-09-23T06:27:04+00:00" title="09/23/24, 06:27 AM">&#x1f550; 1 days ago</time>                                    </td>
+                        <time class="admin-activity_event-time" datetime="2024-09-23T06:27:04+00:00" title="09/23/24, 06:27 AM">&#x1f550; 2 days ago</time>                                    </td>
             </tr>
                         <tr
                 class="am-grid-row odd admin-activity_event admin-activity_event-signup">
@@ -69,4 +69,4 @@ a:4:{s:4:"data";s:5487:"s:5477:"<div class="admin-last admin-activity">
                     </table>
     </div>
 </div>
-";";s:8:"lifetime";i:2592000;s:6:"expire";i:1729836705;s:8:"priority";i:8;}
+";";s:8:"lifetime";i:2592000;s:6:"expire";i:1729841108;s:8:"priority";i:8;}
