@@ -6811,8 +6811,9 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 
 .am-cart .am-cart-product .am-cart-product-content-title {
   overflow: hidden;
-  margin-bottom: 1em;
-  margin-top: 1em;
+  margin-bottom: .5em;
+  margin-top: .5em;
+  font-size: 1.2em;
 }
 
 .am-cart .am-cart-product .am-cart-product-content-title a,
@@ -8405,4 +8406,8 @@ div#grid-user .am-grid-container {
 
 .product-container .am-cart-layout-product {
   margin-right: 0;
+}
+
+.product-container .am-cart-layout-product {
+  padding: 2.5em;
 }
