@@ -8421,3 +8421,11 @@ div#grid-user .am-grid-container {
   text-decoration: none;
   color: black;
 }
+
+ul#basket {
+  border-radius: 1em;
+  background: white;
+  border: 1px solid black;
+  margin: 0;
+  padding: 1.5em;
+}
