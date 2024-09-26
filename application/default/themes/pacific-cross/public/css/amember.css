@@ -7107,6 +7107,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 
 .am-cart-checkout {
   overflow: hidden;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .am-cart-checkout .am-cart-checkout-paysys {
@@ -8422,18 +8423,25 @@ div#grid-user .am-grid-container {
 }
 
 ul#basket {
-  border-radius: 1em;
-  background: white;
-  border: 1px solid black;
+  min-height: 50rem;
+  max-height: 50rem;
   margin: 0;
+  background: white;
 }
 
 
 .basket-item-details {
   display: flex;
+  max-height: 8.5rem;
+  min-height: 8.5rem;
 }
 
 .basket-item-desc {
+  max-height: 2rem;
+  min-height: 2.5rem;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: rgb(75 85 99 / var(--tw-text-opacity));
@@ -8448,19 +8456,31 @@ ul#basket {
 }
 
 .basket-container {
+  flex-direction: column;
+  flex: 1;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.basket-container-img {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+.basket-container-delete {
   padding-left: 1rem;
   padding-top: 1rem;
 }
 
 
+
 .basket-item-title {
-  padding: 0 0 .65rem 0;
   font-weight: 600;
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
 span.basket-item-price {
+  margin-top: auto;
   font-weight: 600;
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -8469,7 +8489,14 @@ span.basket-item-price {
 ul#basket{
   display: flex;
 }
+
 .basket-flex{
+  width: 50%;
+  padding: 2rem;
+  background-color: rgb(226 232 240);
+}
+
+.basket-flexx{
   width: 50%;
   padding: 2rem;
 }
@@ -8486,4 +8513,27 @@ span.am-cart-checkout-paysys-item-description{
 }
 li.basket-totals.basket-grandtotal{
   padding: 1rem;
+}
+
+.container-flex{
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.basket-item-img img {
+width: 90px;
+height: 90px;
+}
+
+.whatif{
+  overflow: scroll;
+  min-height: 30rem;
+  max-height: 30rem;
+}
+
+.basket-item-title strong{
+  text-wrap: nowrap;
 }
