@@ -3,31 +3,7 @@
         <div id="order-summary-wrapper">
             <?php include $this->_script('cart/_basket.phtml'); ?>
         </div>
-        <div id="choose-paysys-wrapper">
-            <h2>
-                <?php
-                if (count($paysystems) > 1) :
-                    __e('Select Payment Method');
-                elseif (count($paysystems) == 1) :
-                    __e('Payment Method');
-                endif;
-                ?>
-            </h2>
-            <div id="ps-errors-container"></div>
-            <div class="am-cart-checkout-paysys">
-                <?php foreach ($paysystems as $ps): ?>
-                    <div id="am-cart-checkout-paysys-<?= $ps->getId() ?>" class="am-cart-checkout-paysys-item <?php if (!empty($cart->getInvoice()->paysys_id) && ($cart->getInvoice()->paysys_id == $ps->getId())) echo 'active'; ?>" data-paysys_id='<?php p($ps->getId()); ?>'>
-                        <label for="ps-<?php p($ps->getId()) ?>">
-                            <input type="radio" name="paysys_id" value="<?= $ps->getId() ?>" <?php if (!empty($cart->getInvoice()->paysys_id) && ($cart->getInvoice()->paysys_id == $ps->getId())) echo 'checked'; ?>>
-                            <div>
-                                <span class='am-cart-checkout-paysys-item-title'><strong><?php echo $ps->getTitle() ?></strong></span>
-                                <span class='am-cart-checkout-paysys-item-description'><?php echo $ps->getDescription() ?></span>
-                            </div>
-                        </label>
-                    </div>
-                <?php endforeach ?>
-            </div>
-        </div>
+
         <?php if ($di->config->get('cart.use_coupons') && !$cart->getInvoice()->isZero()) : ?>
             <h2><?php __e('Coupon Code'); ?></h2>
             <div class="am-cart-checkout-c">

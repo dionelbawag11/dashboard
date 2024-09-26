@@ -7114,10 +7114,8 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 }
 
 .am-cart-checkout .am-cart-checkout-paysys .am-cart-checkout-paysys-item {
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 1em;
-  border-bottom: #dfe8f0 solid 1px;
+padding: 0;
+border: 0;
 }
 
 .am-cart-checkout .am-cart-checkout-paysys .am-cart-checkout-paysys-item input[type=radio] {
@@ -7126,6 +7124,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 
 .am-cart-checkout .am-cart-checkout-paysys .am-cart-checkout-paysys-item .am-cart-checkout-paysys-item-title {
   display: block;
+  padding: 1rem;
 }
 
 .am-cart-checkout .am-cart-checkout-paysys .am-cart-checkout-paysys-item label {
@@ -8427,5 +8426,64 @@ ul#basket {
   background: white;
   border: 1px solid black;
   margin: 0;
-  padding: 1.5em;
+}
+
+
+.basket-item-details {
+  display: flex;
+}
+
+.basket-item-desc {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+  --tw-text-opacity: 1;
+}
+
+.basket-title {
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.basket-container {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+
+.basket-item-title {
+  padding: 0 0 .65rem 0;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+span.basket-item-price {
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+ul#basket{
+  display: flex;
+}
+.basket-flex{
+  width: 50%;
+  padding: 2rem;
+}
+
+h2.payment-head-title {
+  padding: 1rem;
+  line-height: 1;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+span.am-cart-checkout-paysys-item-description{
+  padding: 1rem;
+}
+li.basket-totals.basket-grandtotal{
+  padding: 1rem;
 }
