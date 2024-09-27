@@ -1,8 +1,7 @@
 <?php
 $isAjax = !empty($isAjax);
 
-if (!$isAjax)
-{
+if (!$isAjax) {
     $this->setLayout('cart/layout-wide.phtml');
 }
 $isBasket = true;
@@ -10,30 +9,28 @@ $isBasket = true;
 <?php echo $this->blocks('cart/basket/before') ?>
 <div class="am-cart-checkout">
     <div>
-            <?php if (count($cart->getItems())) : ?>
+        <?php if (count($cart->getItems())): ?>
             <form action="<?php echo $this->url('cart/view-basket') ?>" method="post">
-            
                 <?php include $this->_script('cart/_basket.phtml') ?>
                 <?php include $this->_script('cart/_coupon.phtml') ?>
-                
             </form>
-            <?php else: ?>
+        <?php else: ?>
             <div class="am-cart-checkout-empty">
-                <?php if ($isAjax) : ?>
+                <?php if ($isAjax): ?>
                     <?php __e('Your cart is empty. Click %shere%s to continue shopping.', '<a class="local-link" href="javascript:;" onclick="jQuery(\'#ajax-basket\').amPopup(\'close\');">', '</a>') ?>
-                <?php else : ?>
+                <?php else: ?>
                     <?php __e('Your cart is empty. Click %shere%s to continue shopping.', '<a href="' . $this->url('cart') . '">', '</a>') ?>
-            <?php endif; ?>
+                <?php endif; ?>
             </div>
-<?php endif; ?>
+        <?php endif; ?>
     </div>
 </div>
 
 <?php echo $this->blocks('cart/basket/after') ?>
-<?php if ($isAjax) : ?>
+<?php if ($isAjax): ?>
     <script type="text/javascript">
         jQuery(function () {
-            jQuery('.am-cart-checkout-buttons-update, .am-cart-checkout-buttons-apply').click(function() {
+            jQuery('.am-cart-checkout-buttons-update, .am-cart-checkout-buttons-apply').click(function () {
                 var f = jQuery(this).closest('form');
                 jQuery.post(f.attr('action'), f.serializeArray(), function (html) {
                     cart.loadOnly();
