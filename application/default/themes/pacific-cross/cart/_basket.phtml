@@ -110,11 +110,56 @@ foreach ($cart->getItems() as $item) {
                 </li>
             <?php endforeach ?>
         </div>
+        <li class="basket-divider"></li>
         <div class="totals-container">
+            <li class="basket-totals basket-subtotal">
+                <span class="basket-label"><?php __e('Subtotal') ?></span>
+                <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_subtotal)) ?></span>
+            </li>
+
+            <li class="basket-totals basket-discount">
+                <span class="basket-label"><?php __e('Discount') ?></span>
+                <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_discount)) ?></span>
+            </li>
+
+            <li class="basket-totals basket-shipping">
+                <span class="basket-label"><?php __e('Shipping') ?></span>
+                <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_shipping)) ?></span>
+            </li>
+            <li class="basket-totals basket-tax">
+                <span class="basket-label"><?php __e('Tax') ?></span>
+                <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_tax)) ?></span>
+            </li>
+
+            <li class="basket-totals basket-terms">
+                <span class="basket-terms-label"><?php __e('Terms') ?>:</span>
+                <span class="basket-terms-content"><?php echo ___($cart->getInvoice()->getTerms()) ?></span>
+            </li>
             <li class="basket-totals basket-grandtotal">
                 <span class="basket-label"><?php __e('Total') ?></span>
                 <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_total)) ?></span>
             </li>
+            <form method="post" action="<?php echo $this->url('cart/checkout') ?>">
+    <?php echo Am_Html::renderArrayAsInputHiddens($_REQUEST); ?>
+    <div class="am-cart-checkout-buttons">
+        <?php if (isset($choosePaysys)) : ?>
+        <input type="hidden" name="choose-paysys" value="1" />
+        <?php endif; ?>
+        <input type="submit" class="am-cart-checkout-buttons-checkout" value="<?php __e('Proceed to Checkout') ?>" />
+        <input type="button" class="am-cart-checkout-buttons-update" value="<?php __e('Edit Your Cart') ?>" onclick="window.location.href = '<?php echo $this->url('cart/view-basket') ?>'"/>
+        <input type="hidden" name='a' value='checkout'>
+    </div>
+</form>
+                            <div class="am-cart-checkout-buttons">
+                    <input type="submit" class="am-cart-checkout-buttons-checkout" name="do-checkout" value="<?php __e('Checkout') ?>" />
+                    <input type="submit" class="am-cart-checkout-buttons-update" name="calculate" value="<?php __e('Update') ?>" />
+                    <?php if ($isAjax) : ?>
+                        <a href="javascript:;" onclick="jQuery('#ajax-basket').amPopup('close');" class="local-link"><?php __e('Continue Shopping') ?></a>
+                    <?php else: ?>
+                        <a href="<?php p((isset($b) && $b) ? $b : $this->url('cart', false)) ?>" class="am-cart-checkout-buttons-continue"><?php __e('Continue Shopping') ?></a>
+    <?php endif; ?>
+                    <input type="hidden" name="b" value="<?php p($b) ?>"/>
+                </div>
         </div>
     </div>
     <div class="basket-flexx">
@@ -130,42 +175,6 @@ foreach ($cart->getItems() as $item) {
         </h2>
 
         <li class="basket-divider"></li>
-
-        <?php if ($cart->getInvoice()->first_subtotal != $cart->getInvoice()->first_total): ?>
-            <li class="basket-totals basket-subtotal">
-                <span class="basket-label"><?php __e('Subtotal') ?></span>
-                <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_subtotal)) ?></span>
-            </li>
-        <?php endif; ?>
-
-        <?php if ((float) $cart->getInvoice()->first_discount): ?>
-            <li class="basket-totals basket-discount">
-                <span class="basket-label"><?php __e('Discount') ?></span>
-                <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_discount)) ?></span>
-            </li>
-        <?php endif; ?>
-
-        <?php if ((float) $cart->getInvoice()->first_shipping): ?>
-            <li class="basket-totals basket-shipping">
-                <span class="basket-label"><?php __e('Shipping') ?></span>
-                <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_shipping)) ?></span>
-            </li>
-        <?php endif; ?>
-
-        <?php if ((float) $cart->getInvoice()->first_tax): ?>
-            <li class="basket-totals basket-tax">
-                <span class="basket-label"><?php __e('Tax') ?></span>
-                <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_tax)) ?></span>
-            </li>
-        <?php endif; ?>
-
-
-        <?php if (!empty($cart->getInvoice()->rebill_times)): ?>
-            <li class="basket-terms">
-                <span class="basket-terms-label"><?php __e('Terms') ?>:</span>
-                <span class="basket-terms-content"><?php echo ___($cart->getInvoice()->getTerms()) ?></span>
-            </li>
-        <?php endif ?>
         <div id="choose-paysys-wrapper">
             <div id="ps-errors-container"></div>
             <div class="am-cart-checkout-paysys">
