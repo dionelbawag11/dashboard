@@ -11,7 +11,7 @@
                     </div>
                 </div>
             <?php endif; ?>
-            <!-- Icons for Display Options -->
+           
             <div id="display-options" class="display-options" style="margin-left: 20px; margin-top: 2px;">
                 <span id="grid-view-icon" class="view-icon active" onclick="changeView('grid')">
                     <i class="fa fa-list"></i> <!-- List icon -->
@@ -30,8 +30,6 @@
             <span id="next-bill-tab" class="tab" onclick="filterSubscriptions('next-bill')">Next Bill</span>
             <span id="lifetime-tab" class="tab" onclick="filterSubscriptions('lifetime')">Lifetime</span>
         </div>
-
-        <!-- Grid View -->
         <div id="grid-view" class="view-mode grid-view" style="display: block;">
             <?php foreach ($member_products as $p): ?>
                 <li class="subscription-item grid-item" style="min-height: auto;" data-search-target="subscription"
