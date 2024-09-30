@@ -7133,7 +7133,8 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 }
 
 .am-cart-checkout .am-cart-checkout-paysys div:hover {
-  background-color: #eff8ff;
+  background-color: rgb(64 64 64);
+  color: rgb(248 250 252);
 }
 
 .am-cart-checkout .am-cart-checkout-paysys div.active {

@@ -7,7 +7,7 @@ foreach ($cart->getItems() as $item) {
     $hasQty = $hasQty || $item->qty > 1 || $item->variable_qty;
 }
 $paysystems = Am_Di::getInstance()->paysystemList->getAllPublic();
-echo $paysystems;
+
 ?>
 <style>
     .am-basket-img {
@@ -141,19 +141,6 @@ echo $paysystems;
                 <span class="basket-label"><?php __e('Total') ?></span>
                 <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_total)) ?></span>
             </li>
-            <form method="post" action="<?php echo $this->url('cart/checkout') ?>">
-                <?php echo Am_Html::renderArrayAsInputHiddens($_REQUEST); ?>
-                <div class="am-cart-checkout-buttons">
-                    <?php if (isset($choosePaysys)): ?>
-                        <input type="hidden" name="choose-paysys" value="1" />
-                    <?php endif; ?>
-                    <input type="submit" class="am-cart-checkout-buttons-checkout"
-                        value="<?php __e('Proceed to Checkout') ?>" />
-                    <input type="button" class="am-cart-checkout-buttons-update" value="<?php __e('Edit Your Cart') ?>"
-                        onclick="window.location.href = '<?php echo $this->url('cart/view-basket') ?>'" />
-                    <input type="hidden" name='a' value='checkout'>
-                </div>
-            </form>
             <div class="am-cart-checkout-buttons">
                 <input type="submit" class="am-cart-checkout-buttons-checkout" name="do-checkout"
                     value="<?php __e('Checkout') ?>" />
@@ -207,6 +194,19 @@ echo $paysystems;
             <span class="basket-label"><?php __e('Total') ?></span>
             <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_total)) ?></span>
         </li>
+        <form method="post" action="<?php echo $this->url('cart/checkout') ?>">
+                <?php echo Am_Html::renderArrayAsInputHiddens($_REQUEST); ?>
+                <div class="am-cart-checkout-buttons">
+                    <?php if (isset($choosePaysys)): ?>
+                        <input type="hidden" name="choose-paysys" value="1" />
+                    <?php endif; ?>
+                    <input type="submit" class="am-cart-checkout-buttons-checkout"
+                        value="<?php __e('Proceed to Checkout') ?>" />
+                    <input type="button" class="am-cart-checkout-buttons-update" value="<?php __e('Edit Your Cart') ?>"
+                        onclick="window.location.href = '<?php echo $this->url('cart/view-basket') ?>'" />
+                    <input type="hidden" name='a' value='checkout'>
+                </div>
+            </form>
     </div>
 </ul>
 
