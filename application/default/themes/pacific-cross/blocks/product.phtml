@@ -13,9 +13,7 @@
                         alt="<?php p($product->title) ?>" title="<?php p($product->title) ?>" />
                 <?php else: ?>
                     <a href="<?php p($product_url) ?>"><img class="am-cart-product-content-desc-img"
-                            src="<?php echo $this->url("data/public/{$product->img_path}") ?>" style="  display: block;
-  margin-left: auto;
-  margin-right: auto;" alt="<?php p($product->title) ?>" title="<?php p($product->title) ?>" /></a>
+                            src="<?php echo $this->url("data/public/{$product->img_path}") ?>" alt="<?php p($product->title) ?>" title="<?php p($product->title) ?>" /></a>
                 <?php endif; ?>
             </div>
             <div class="am-cart-product-content-title">
