@@ -271,7 +271,6 @@ body {
         margin: 2em auto 0;
     }
 }
-
 ul.am-tabs li.active,
 ul.am-tabs li.normal:hover {
     background: #eb6653;
@@ -281,7 +280,6 @@ ul.am-tabs li.active > a,
 ul.am-tabs li.normal > a:hover {
     border-color: #eb6653;
 }
-
 .am-page-login-no-label .am-auth-form,
 .am-page-login-no-label .am-signup-link,
 .am-page-login-no-label .am-fb-login-button-wrapper {

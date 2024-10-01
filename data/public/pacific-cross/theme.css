@@ -285,7 +285,6 @@ body {
     }
 }
 
-
 ul.am-tabs li.active,
 ul.am-tabs li.normal:hover,
 #menu li li a:hover {
@@ -297,7 +296,6 @@ ul.am-tabs li.normal>a:hover,
 #menu li li a:hover {
     border-color: #bbdefb;
 }
-
 ul.am-tabs li {
     display: block;
     margin: 0 5px 0px 5px;
