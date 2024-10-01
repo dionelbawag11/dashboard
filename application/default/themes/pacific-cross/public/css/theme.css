@@ -285,17 +285,6 @@ body {
         margin: 2em auto 0;
     }
 }
-ul.am-tabs li.active,
-ul.am-tabs li.normal:hover,
-#menu li li a:hover {
-    background: %menu_color%;
-}
-
-ul.am-tabs li.active>a,
-ul.am-tabs li.normal>a:hover,
-#menu li li a:hover {
-    border-color: %menu_color%;
-}
 
 ul.am-tabs li {
     display: block;
@@ -530,4 +519,9 @@ ul.am-header-menu li ul {
     .am-account-toolbar .am-account-toolbar-items {
         background: %header_top%;
     }
+}
+
+ul.am-tabs li.active>a::after, 
+ul.am-tabs li.normal>a:hover::after {
+    background-color: %menu_color%; 
 }
