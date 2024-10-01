@@ -100,6 +100,7 @@ body {
 }
 
 .am-body .am-body-content-wrapper {
+    margin-top: 1rem;
     border: none;
     padding-bottom: 1em;
     margin-bottom: 50px;
@@ -284,7 +285,6 @@ body {
         margin: 2em auto 0;
     }
 }
-
 ul.am-tabs li.active,
 ul.am-tabs li.normal:hover,
 #menu li li a:hover {
@@ -296,6 +296,7 @@ ul.am-tabs li.normal>a:hover,
 #menu li li a:hover {
     border-color: #bbdefb;
 }
+
 ul.am-tabs li {
     display: block;
     margin: 0 5px 0px 5px;
@@ -500,11 +501,11 @@ ul.am-header-menu li ul {
 }
 
 .tb-popover-wrapper:hover .tb-popover-content {
-    background: #ea80fc;
+    background: #f1f5f9;
 }
 
 .tb-popover-content:before {
-    border-color: transparent transparent #ea80fc transparent;
+    border-color: transparent transparent #f1f5f9 transparent;
 }
 
 .faq{
@@ -523,4 +524,10 @@ ul.am-header-menu li ul {
 
 #member-main-subscriptions-head {
     font-size: 18px;
+}
+
+@media all and (max-width:500px) {
+    .am-account-toolbar .am-account-toolbar-items {
+        background: #0079d1;
+    }
 }

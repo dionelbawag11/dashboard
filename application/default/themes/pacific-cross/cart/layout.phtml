@@ -8,6 +8,7 @@ $this->headScript()
     ->appendFile($this->_scriptJs('cart.js'));
 ?>
 <?php echo $this->blocks('cart/top') ?>
+<div class="pacific-cart-layout">
 <div class="row cart-right-section">
     <div class="cart-col-sm-4">
         <div>
@@ -31,7 +32,7 @@ $this->headScript()
             <?php echo $this->blocks('cart/category') ?>
         </div>
     </div>
-    <div class="cart-col-sm-4" style="float: right; margin-right: 20em;">
+    <div class="cart-col-sm-6" style="float: right; margin-right: 21rem;">
         <div>
             <a href="<?php echo $this->url('cart'); ?>"><?php __e('Back to shopping') ?></a>
         </div>
@@ -41,7 +42,7 @@ $this->headScript()
     <div class="am-cart-sidebar">
         <?php echo $this->blocks('cart/right', '<div class="am-block block" id="%3$s">
         <h1 id="%3$s-head" style="text-align: center;">%2$s</h1>
-        <div style="height: 2px; margin-bottom: 20px; margin-top: 20px; background: black;"></div>
+        <div style="height: 1px;margin-bottom: 20px;margin-top: 20px;background: #a3a3a3;"></div>
         <h2 style="margin-bottom: .5em;"></h2>
         <h2 style="margin-bottom: .5em;">Order details</h2>
         %1$s</div>'); ?>
@@ -63,5 +64,8 @@ $this->headScript()
 
     <div class="am-cart-clear"></div>
 </div>
+</div>
+
+
 <?php echo $this->blocks('cart/bottom') ?>
 <?php include $this->_script('cart/_js.phtml');
