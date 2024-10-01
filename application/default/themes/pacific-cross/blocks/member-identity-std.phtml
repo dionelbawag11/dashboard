@@ -1,4 +1,4 @@
-<div class="am-user-identity-block">
+<!-- <div class="am-user-identity-block">
     <ul id="menu">
         <li>
             <span class="am-user-identity-block_login" style="color: white;"><?php p($di->user->login) ?></span>
@@ -25,4 +25,8 @@
             </ul>
         </li>
     </ul>
+</div> -->
+
+<div class="am-user-identity-block">
+    <span class="am-user-identity-block_login white-color"><?php p($di->user->login) ?></span> | <a class="white-color" href="<?php echo $this->url('logout') ?>"><?php __e('Logout')?></a>
 </div>

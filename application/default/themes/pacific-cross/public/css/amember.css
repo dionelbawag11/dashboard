@@ -8598,5 +8598,27 @@ span.am-cart-checkout-paysys-item-description {
 
 
 .pacific-header-menu ul.am-tabs li {
+  font-weight: 800;
   border-radius: 0px;
+}
+
+.pacific-header-menu ul.am-tabs a{
+  font-weight: 800;
+  border: none;
+}
+
+.am-cart-sidebar .am-block {
+  border: none;
+  border-radius: 10px;
+}
+
+.pacific-header-menu ul.am-tabs .has-children ul {
+  background: white;
+  border-radius: 10px;
+  border: none;
+}
+
+
+.white-color{
+  color: white;
 }

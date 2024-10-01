@@ -1,5 +1,5 @@
 a:4:{s:4:"data";s:1897:"s:1887:"<h2>Today<span class="widget-title-info"> &middot;
-            09/30/24    </span></h2>
+            10/01/24    </span></h2>
 <div class="admin-dashboard-wrapper">
 <table class="admin-dashboard">
     <tr>
@@ -31,7 +31,7 @@ a:4:{s:4:"data";s:1897:"s:1887:"<h2>Today<span class="widget-title-info"> &middo
             </dd>
 </dl>
                         <dl>
-    <dt>Rebills <small title="10/01/24" style="opacity: .7;">next day</small></dt>
+    <dt>Rebills <small title="10/02/24" style="opacity: .7;">next day</small></dt>
         <dd>
                     0
             </dd>
@@ -72,7 +72,7 @@ a:4:{s:4:"data";s:1897:"s:1887:"<h2>Today<span class="widget-title-info"> &middo
             </dd>
 </dl>
                         <dl>
-    <dt>Rebills <small title="10/01/24&ndash;10/08/24" style="opacity: .7;">next 7 days</small></dt>
+    <dt>Rebills <small title="10/02/24&ndash;10/09/24" style="opacity: .7;">next 7 days</small></dt>
         <dd>
                     0
             </dd>
@@ -80,4 +80,4 @@ a:4:{s:4:"data";s:1897:"s:1887:"<h2>Today<span class="widget-title-info"> &middo
                     </td>
     </tr>
 </table>
-</div>";";s:8:"lifetime";i:2592000;s:6:"expire";i:1730259937;s:8:"priority";i:8;}
+</div>";";s:8:"lifetime";i:2592000;s:6:"expire";i:1730338729;s:8:"priority";i:8;}
