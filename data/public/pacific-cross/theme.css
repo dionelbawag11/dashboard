@@ -529,3 +529,7 @@ ul.am-tabs li.normal>a:hover::after {
 .tb-popover-content{
     border-bottom: 3px solid #ffb933;
 }
+
+.am-grid th a.sorted-desc::before{
+    color: #ffb933;
+}

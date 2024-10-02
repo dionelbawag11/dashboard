@@ -1108,7 +1108,7 @@ ul.am-breadcrumbs .am-breadcrumbs-separator {
 }
 
 .am-grid tr.am-grid-row.odd td {
-  background-color: #d3dce3;
+  background-color: none;
 }
 
 .am-grid tr.am-grid-row.odd td.sorted {
@@ -1192,6 +1192,7 @@ ul.am-breadcrumbs .am-breadcrumbs-separator {
   content: "";
   transform: none;
   opacity: 1;
+  color: orangered;
 }
 
 .am-grid th:last-child {
@@ -1204,7 +1205,8 @@ ul.am-breadcrumbs .am-breadcrumbs-separator {
 }
 
 .am-grid tr.am-grid-row>td {
-  background: #f6f7f8;
+  background: none;
+  border-bottom: 1px solid #dee2e6;
 }
 
 .am-grid tr.am-grid-row>td.sorted {
@@ -8164,9 +8166,7 @@ div#row-category_id-0 .am-element {
 }
 
 div#grid-user h1 {
-  margin-bottom: .5em;
-  font-size: 25px;
-  margin-left: 12px;
+
 }
 
 div#row-save-0 .am-element {
@@ -8175,14 +8175,13 @@ div#row-save-0 .am-element {
 }
 
 div#grid-user .am-filter-wrap {
-  margin-left: 7px;
   width: 40%;
   float: left;
   background: transparent;
 }
 
 div#grid-user .am-grid-container .am-grid {
-  border: 1px solid black;
+
 }
 
 div#row-subject-0 {
@@ -8305,13 +8304,11 @@ div#grid-user .filter-inputs {
 
 div#grid-user .am-norecord-actions {
   float: right;
-  margin-top: 7px;
-  margin-right: -14px;
+  margin-right: -2px;
 }
 
 div#grid-user .am-grid-container {
   width: 100%;
-  margin-left: 13px;
 }
 
 
@@ -8412,6 +8409,8 @@ div#grid-user .am-grid-container {
 
 .am-cart-product-content-title a {
   text-decoration: none;
+  font-weight: 700;
+  color: black !important;
 }
 
 .tb-popover-content .am-cart-product-content-title a {
@@ -8576,11 +8575,6 @@ span.am-cart-checkout-paysys-item-description {
   padding-left: 1rem;
 }
 
-
-.am-cart-product-content-title a{
-  color: black;
-}
-
 .pacific-header-menu{
   margin-top: auto;
   margin-left: auto;
@@ -8628,10 +8622,6 @@ span.am-cart-checkout-paysys-item-description {
 
 }
 
-.am-cart-product-content-title a {
-  color: black;
-}
-
 .am-form div.am-element-title .comment {
   text-align: left;
   margin-left: 15px;
@@ -8641,7 +8631,7 @@ span.am-cart-checkout-paysys-item-description {
 ul.am-tabs li.active>a,
 ul.am-tabs li.normal>a:hover {
     position: relative;
-    padding-bottom: 5px; /* Space for the line */
+    padding-bottom: 5px; 
 }
 
 ul.am-tabs li.active>a::after, 
@@ -8652,7 +8642,7 @@ ul.am-tabs li.normal>a:hover::after {
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: #e74c3c; /* Customize the color */
+    background-color: #e74c3c; 
     transition: width 0.4s ease, left 0.4s ease;
 }
 
@@ -8662,7 +8652,6 @@ ul.am-tabs li.normal>a:hover::after {
     left: 0;
 }
 
-/* Fix the non-hover state to ensure proper positioning */
 ul.am-tabs li>a::after {
     content: '';
     position: absolute;
@@ -8670,7 +8659,7 @@ ul.am-tabs li>a::after {
     left: 50%;
     width: 0;
     height: 1px;
-    background-color: #e74c3c; /* Same color for consistency */
+    background-color: #e74c3c; 
     transition: width 0.4s ease, left 0.4s ease;
 }
 
@@ -8683,4 +8672,34 @@ ul.am-tabs li>a::after {
 
 .settings-container{
   margin-left: auto;
+}
+
+.cart-col-sm-6 div a{
+  text-decoration: none;
+}
+
+div#grid-user {
+  padding: 3rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background: white;
+  border-radius: 10px;
+}
+
+div#grid-user h1.am-grid-title {font-weight: 600;}
+
+div#grid-user .am-filter-wrap {
+  padding: 0;
+}
+
+div#grid-user .am-grid th a span {
+  font-weight: 600;
+}
+
+div#grid-user .am-grid-container table {
+  border-color: none;
+}
+
+div#grid-user .am-grid-container {
+  border: none;
+  box-shadow: none;
 }

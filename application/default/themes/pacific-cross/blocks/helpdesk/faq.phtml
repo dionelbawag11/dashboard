@@ -5,11 +5,12 @@
     <?php echo $this->render('blocks/helpdesk/_search-form.phtml') ?>
 <?php endif; ?>
 <?php if ($categories): ?>
+    <div>
     <div class="am-block" id="faq-block">
-        <div>
+
             <h1 class="faq-categories-title">
                 FAQ Categories</h1>
-        </div>
+
         <ul class="am-helpdesk-faq-cat">
             <?php foreach ($categories as $cat): ?>
                 <li class="am-helpdesk-faq-cat-item">
@@ -35,3 +36,5 @@
         </button>
     </div>
 <?php endforeach; ?>
+
+</div>
