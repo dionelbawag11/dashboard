@@ -447,11 +447,11 @@ ul.am-header-menu li ul {
 }
 
 .am-layout-two-coll .am-coll-left .am-coll-content {
-    margin: 0 1em;
+    margin: 0;
 }
 
 .am-layout-two-coll .am-coll-right .am-coll-content {
-    margin: 0 1em;
+    margin: 0;
 }
 
 .unsubscribe-label {

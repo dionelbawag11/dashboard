@@ -66,7 +66,7 @@
                         <?php elseif ($products_expire[$p->pk()] == Am_Period::MAX_SQL_DATE): ?>
                             <span class="am-list-subscriptions-date_lifetime"><?php __e('Lifetime') ?></span>
                         <?php else: ?>
-                            <span class="am-list-subscriptions-date_expires"><?php __e('Expires at ') ?> <span
+                            <span class="am-list-subscriptions-date_expires"><?php __e('Expires at') ?> <span
                                     class="am-list-subscriptions-date_expires_date"
                                     data-date="<?= $products_expire[$p->pk()] ?>"><?php echo amDate($products_expire[$p->pk()]); ?></span></span>
                         <?php endif ?>
@@ -77,7 +77,7 @@
             <?php foreach ($member_future_products as $p): ?>
                 <li class="subscription-item grid-item future-product" data-search-target="subscription"
                     data-title="<?php p(strtolower($p->getTitle())) ?>" id="product-item-<?php p($p->pk()) ?>">
-                    <span class="am-list-subscriptions-title" style="font-weight: bold; font-size: 1.2em; color: #333;">
+                    <span class="am-list-subscriptions-title" style="font-weight: 400; font-size: 1.2em; color: #333;">
                         <?php echo $p->getTitle(); ?>
                     </span>
                     <span class="am-list-subscriptions-date" data-status="<?php
@@ -117,11 +117,11 @@
                         <?php endif; ?>
                     </div>
                     <span class="am-list-subscriptions-title"
-                        style="display: inline-block; font-weight: bold; font-size: 1.2em; color: #333;">
+                        style="display: inline-block; font-weight: 400; font-size: 1.2em; color: #333;">
                         <?php if ($_url = $p->getDashboardUrl()): ?>
                             <a href="<?php p($_url) ?>"><?php echo $p->getTitle(); ?></a>
                         <?php else: ?>
-                            <strong><?php echo $p->getTitle(); ?></strong>
+                         <?php echo $p->getTitle(); ?>
                         <?php endif; ?>
                     </span>
                     <span class="am-list-subscriptions-date" data-status="<?php
@@ -134,15 +134,15 @@
                     }
                     ?>">
                         <?php if ($products_rebill[$p->pk()]): ?>
-                            <span class="am-list-subscriptions-date_rebill"><?php __e('next bill') ?> <span
+                            <span class="am-list-subscriptions-date_rebill"><?php __e('Next bill') ?> <span
                                     class="am-list-subscriptions-date_rebill_date"
                                     data-date="<?= $products_rebill[$p->pk()] ?>"><?php echo amDate($products_rebill[$p->pk()]); ?></span></span>
                         <?php elseif ($products_expire[$p->pk()] == Am_Period::MAX_SQL_DATE): ?>
                             <span class="am-list-subscriptions-date_lifetime"><?php __e('Lifetime') ?></span>
                         <?php else: ?>
-                            <span class="am-list-subscriptions-date_expires"><?php __e('expires') ?>
-                            
-                            </span>
+                            <span class="am-list-subscriptions-date_expires"><?php __e('Expires at ') ?> <span
+                                    class="am-list-subscriptions-date_expires_date"
+                                    data-date="<?= $products_expire[$p->pk()] ?>"><?php echo amDate($products_expire[$p->pk()]); ?></span></span>
                         <?php endif ?>
                     </span>
                     <span class="am-list-subscriptions-link">
@@ -215,13 +215,13 @@
                         }
                         ?>">
                             <?php if ($products_rebill[$p->pk()]): ?>
-                                <span class="am-list-subscriptions-date_rebill"><?php __e('next bill') ?>
+                                <span class="am-list-subscriptions-date_rebill"><?php __e('Next bill') ?>
                                     <span class="am-list-subscriptions-date_rebill_date"
                                         data-date="<?= $products_rebill[$p->pk()] ?>"><?php echo amDate($products_rebill[$p->pk()]); ?></span></span>
                             <?php elseif ($products_expire[$p->pk()] == Am_Period::MAX_SQL_DATE): ?>
                                 <span class="am-list-subscriptions-date_lifetime"><?php __e('Lifetime') ?></span>
                             <?php else: ?>
-                                <span class="am-list-subscriptions-date_expires"><?php __e('expires') ?> <span
+                                <span class="am-list-subscriptions-date_expires"><?php __e('Expires at') ?> <span
                                         class="am-list-subscriptions-date_expires_date"
                                         data-date="<?= $products_expire[$p->pk()] ?>"><?php echo amDatetime($products_expire[$p->pk()]); ?></span></span>
                             <?php endif ?>

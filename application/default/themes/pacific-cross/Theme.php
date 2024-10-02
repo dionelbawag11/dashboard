@@ -1102,7 +1102,7 @@ CUT
             @media all and (min-width: 750px) {
                 .am-layout-two-coll .am-coll-left {
                   float: right;
-                  width: 20%;
+                  width: 18%;
                 }
                 .am-layout-two-coll .am-coll-right {
                   float: left;
@@ -1116,7 +1116,7 @@ CUT
         @media all and (min-width: 750px) {
           .am-layout-two-coll .am-coll-left {
             float: left;
-            width: 20%;
+            width: 18%;
           }
           .am-layout-two-coll .am-coll-right {
             float: right;

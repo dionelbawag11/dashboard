@@ -367,7 +367,6 @@ ul.am-tabs li {
 
 .am-body-content a.button,
 .am-body-content button,
-.am-body-content input[type="button"],
 .am-body-content input[type="submit"],
 .am-popup a.button,
 .am-popup button,
@@ -443,14 +442,6 @@ ul.am-header-menu li ul {
 .am-layout-two-coll .am-layout-two-coll-bottom {
     clear: both;
     height: 20px;
-}
-
-.am-layout-two-coll .am-coll-left .am-coll-content {
-    margin: 0 1em;
-}
-
-.am-layout-two-coll .am-coll-right .am-coll-content {
-    margin: 0 1em;
 }
 
 .unsubscribe-label {

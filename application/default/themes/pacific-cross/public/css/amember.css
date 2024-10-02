@@ -1520,11 +1520,11 @@ ul.am-breadcrumbs .am-breadcrumbs-separator {
 }
 
 .am-layout-two-coll .am-coll-left .am-coll-content {
-  margin: 0 1em;
+  margin: 0;
 }
 
 .am-layout-two-coll .am-coll-right .am-coll-content {
-  margin: 0 1em;
+  margin: 0;
 }
 
 /* Pagination */
@@ -3204,7 +3204,7 @@ ul.am-widget-list li {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  line-height: 1.6em;
+  line-height: 2em;
 }
 
 .am-list-subscriptions_divider {
@@ -7470,12 +7470,12 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
   border-radius: 10px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12);
   float: left;
-  max-height: 350px;
+  max-height: 30rem;
   max-width: 350px;
-  min-height: 350px;
+  min-height: 30rem;
   min-width: 290px;
   margin: 10px;
-  background: #f3f3f3;
+  background: #89898914;
 }
 
 .accordion-view {
@@ -8587,14 +8587,14 @@ span.am-cart-checkout-paysys-item-description {
 
 .am-user-identity-block a {
   color: white !important;
-  font-weight: 700;
-  letter-spacing: 1.1px;
+  font-weight: 100;
+  letter-spacing: 1px;
 }
 
 .am-user-identity-block span {
   color: white;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  font-weight: 100;
+  letter-spacing: 1px;
 }
 
 .pacific-cart-layout {
