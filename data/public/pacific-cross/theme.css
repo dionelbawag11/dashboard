@@ -383,8 +383,8 @@ ul.am-tabs li {
 .am-popup input[type="submit"]:hover,
 .cart-buttons a {
     color: rgb(255, 255, 255);
-    background: #ff8a80;
-    border-color: #ff8a80;
+    background: #ffb933;
+    border-color: #ffb933;
 }
 
 .am-body-content input[type=submit]:disabled,
@@ -406,13 +406,13 @@ ul.am-tabs li {
 .input-file .input-file-button,
 .input-file.hover .input-file-button {
     color: white;
-    background: #ff8a80;
+    background: #ffb933;
     border: none;
     text-shadow: none;
 }
 
 .input-file.hover {
-    border-color: #ff8a80;
+    border-color: #ffb933;
 }
 
 ul.am-header-menu a {
@@ -477,11 +477,11 @@ ul.am-header-menu li ul {
 
 .cart-button {
     color: white;
-    background-color: #ff8a80;
+    background-color: #ffb933;
 }
 
 #display-options .view-icon.active {
-    color: #ff8a80;
+    color: #ffb933;
 }
 
 .subscription-tabs .tab.active{
@@ -490,11 +490,11 @@ ul.am-header-menu li ul {
 }
 
 .tb-popover-wrapper:hover .tb-popover-content {
-    background: #f1f5f9;
+    background: #ffffff;
 }
 
 .tb-popover-content:before {
-    border-color: transparent transparent #f1f5f9 transparent;
+    border-color: transparent transparent #ffffff transparent;
 }
 
 .faq{
@@ -523,5 +523,9 @@ ul.am-header-menu li ul {
 
 ul.am-tabs li.active>a::after, 
 ul.am-tabs li.normal>a:hover::after {
-    background-color: #ff8a80; 
+    background-color: #ffb933; 
+}
+
+.tb-popover-content{
+    border-bottom: 3px solid #ffb933;
 }

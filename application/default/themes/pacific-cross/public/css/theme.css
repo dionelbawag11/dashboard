@@ -525,3 +525,7 @@ ul.am-tabs li.active>a::after,
 ul.am-tabs li.normal>a:hover::after {
     background-color: %menu_color%; 
 }
+
+.tb-popover-content{
+    border-bottom: 3px solid %menu_color%;
+}
