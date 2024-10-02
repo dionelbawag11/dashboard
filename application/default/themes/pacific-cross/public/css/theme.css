@@ -497,8 +497,11 @@ ul.am-header-menu li ul {
     border-color: transparent transparent %hover_cart% transparent;
 }
 
-.faq{
+.faq .faq-title{
     color: %faq_text%;
+}
+
+.faq {
     background-color: %faq_bg%;
 }
 

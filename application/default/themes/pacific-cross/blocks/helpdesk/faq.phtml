@@ -4,8 +4,29 @@
 <?php if (!$catActive && $di->modules->get('helpdesk')->getConfig('show_faq_search')): ?>
     <?php echo $this->render('blocks/helpdesk/_search-form.phtml') ?>
 <?php endif; ?>
+<div class="faq-container-box">
+<div class="faq-list-container">
+<?php foreach ($faq as $f): ?>
+
+    <div class="faq">
+        <h3 class="faq-title">
+            <?php p($f->title) ?>
+        </h3>
+        <p class="faq-text">
+            <?php echo $f->content; ?>
+        </p>
+        <button class="faq-toggle">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-times"></i>
+            <i class="fas fa-minus"></i>
+        </button>
+    </div>
+
+<?php endforeach; ?>
+</div>
+
 <?php if ($categories): ?>
-    <div>
+
     <div class="am-block" id="faq-block">
 
             <h1 class="faq-categories-title">
@@ -20,21 +41,4 @@
         </ul>
     </div>
 <?php endif; ?>
-
-
-<?php foreach ($faq as $f): ?>
-    <div class="faq">
-        <h3 class="faq-title">
-            <?php p($f->title) ?>
-        </h3>
-        <p class="faq-text">
-            <?php echo $f->content; ?>
-        </p>
-        <button class="faq-toggle">
-            <i class="fas fa-chevron-down"></i>
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-<?php endforeach; ?>
-
 </div>

@@ -769,7 +769,7 @@ html {
 }
 
 .am-header {
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   height: 140px;
   background: white;
 }
@@ -8013,8 +8013,6 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
-  max-width: 800px;
-  background-color: rgb(233, 233, 233);
   overflow: hidden;
   padding-right: 20px;
   padding-top: 20px;
@@ -8022,7 +8020,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
   padding-left: 20px;
   position: relative;
   transition: 0.3s ease;
-  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  border-bottom: 1px solid #b2b2b2;
 }
 
 .faq.active {
@@ -8033,7 +8031,6 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 .faq.active::before,
 .faq.active::after {
   color: #2ecc71;
-  content: "\f075";
   font-family: "Font Awesome 6 Free";
   font-size: 7rem;
   left: 20px;
@@ -8062,9 +8059,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
   display: none;
   font-size: 15px;
   margin-top: 20px;
-  margin-left: 60px;
-  margin-right: 60px;
-
+  margin-left: 20rem;
 }
 
 .faq.active .faq-text {
@@ -8090,12 +8085,12 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 
 }
 
-.faq-toggle .fa-times,
+.faq-toggle .fa-minus,
 .faq.active .faq-toggle .fa-chevron-down {
   display: none;
 }
 
-.faq.active .faq-toggle .fa-times {
+.faq.active .faq-toggle .fa-minus {
   color: #fff;
   display: block;
 }
@@ -8119,19 +8114,18 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 
 
 #faq-block {
+  padding: 2rem;
+  width: 20%;
   margin-left: auto;
   margin-right: auto;
-  max-width: 800px;
-  padding: 20px;
-  box-shadow: none !important;
-  border: 1px solid black !important;
+  margin-bottom: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.20);
+  border: 0;
 }
 
 .faq-categories-title {
   margin-bottom: 10px;
 }
-
-
 
 
 div#row-content-0 .am-element-title {
@@ -8165,9 +8159,7 @@ div#row-category_id-0 .am-element {
   padding: 0;
 }
 
-div#grid-user h1 {
-
-}
+div#grid-user h1 {}
 
 div#row-save-0 .am-element {
   margin-left: 0;
@@ -8180,9 +8172,7 @@ div#grid-user .am-filter-wrap {
   background: transparent;
 }
 
-div#grid-user .am-grid-container .am-grid {
-
-}
+div#grid-user .am-grid-container .am-grid {}
 
 div#row-subject-0 {
   float: right;
@@ -8570,12 +8560,13 @@ span.am-cart-checkout-paysys-item-description {
   object-fit: cover;
 }
 
-.am-cart-product-content-product .am-cart-product-content-title, .am-cart-product-content-product .am-cart-product-content-desc-short{
+.am-cart-product-content-product .am-cart-product-content-title,
+.am-cart-product-content-product .am-cart-product-content-desc-short {
   padding-right: 1rem;
   padding-left: 1rem;
 }
 
-.pacific-header-menu{
+.pacific-header-menu {
   margin-top: auto;
   margin-left: auto;
 }
@@ -8586,7 +8577,7 @@ span.am-cart-checkout-paysys-item-description {
   border-radius: 0px;
 }
 
-.pacific-header-menu ul.am-tabs a{
+.pacific-header-menu ul.am-tabs a {
   font-weight: 800;
   border: none;
 }
@@ -8604,14 +8595,14 @@ span.am-cart-checkout-paysys-item-description {
 
 .am-user-identity-block a {
   color: white !important;
-    font-weight: 700;
-    letter-spacing: 1.1px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
 }
 
 .am-user-identity-block span {
   color: white;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
 .pacific-cart-layout {
@@ -8630,37 +8621,37 @@ span.am-cart-checkout-paysys-item-description {
 
 ul.am-tabs li.active>a,
 ul.am-tabs li.normal>a:hover {
-    position: relative;
-    padding-bottom: 5px; 
+  position: relative;
+  padding-bottom: 5px;
 }
 
-ul.am-tabs li.active>a::after, 
+ul.am-tabs li.active>a::after,
 ul.am-tabs li.normal>a:hover::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background-color: #e74c3c; 
-    transition: width 0.4s ease, left 0.4s ease;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #e74c3c;
+  transition: width 0.4s ease, left 0.4s ease;
 }
 
-ul.am-tabs li.active>a::after, 
+ul.am-tabs li.active>a::after,
 ul.am-tabs li.normal>a:hover::after {
-    width: 100%;
-    left: 0;
+  width: 100%;
+  left: 0;
 }
 
 ul.am-tabs li>a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 1px;
-    background-color: #e74c3c; 
-    transition: width 0.4s ease, left 0.4s ease;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: #e74c3c;
+  transition: width 0.4s ease, left 0.4s ease;
 }
 
 .active-subscription-flex-container {
@@ -8670,22 +8661,24 @@ ul.am-tabs li>a::after {
   margin: auto;
 }
 
-.settings-container{
+.settings-container {
   margin-left: auto;
 }
 
-.cart-col-sm-6 div a{
+.cart-col-sm-6 div a {
   text-decoration: none;
 }
 
 div#grid-user {
   padding: 3rem;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   background: white;
   border-radius: 10px;
 }
 
-div#grid-user h1.am-grid-title {font-weight: 600;}
+div#grid-user h1.am-grid-title {
+  font-weight: 600;
+}
 
 div#grid-user .am-filter-wrap {
   padding: 0;
@@ -8702,4 +8695,26 @@ div#grid-user .am-grid-container table {
 div#grid-user .am-grid-container {
   border: none;
   box-shadow: none;
+}
+
+.faq-container-box {
+  display: flex;
+}
+
+.faq-list-container {
+  background: white;
+  width: 70%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11);
+  padding: 2rem;
+}
+h1.faq-categories-title {
+  font-weight: 700;
+}
+
+li.am-helpdesk-faq-cat-item h2{
+  margin-left: .3rem;
+}
+
+.faq{
+  color: #8a8a8a;
 }

@@ -497,14 +497,17 @@ ul.am-header-menu li ul {
     border-color: transparent transparent #ffffff transparent;
 }
 
-.faq{
-    color: #ffffff;
-    background-color: #0079d1;
+.faq .faq-title{
+    color: #212121;
+}
+
+.faq {
+    background-color: #ffffff;
 }
 
 .faq.active{
     color: #2a333c;
-    background-color: #ffebcd;
+    background-color: #ffffff;
 }
 
 .faq.active .faq-text{
