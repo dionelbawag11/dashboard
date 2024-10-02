@@ -1715,6 +1715,7 @@ ul.am-tabs .has-children>a:hover {
 }
 
 ul.am-tabs .has-children>a::after {
+  display: none;
   content: " ";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -7907,10 +7908,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 .am-cart-layout-product .am-cart-product-content-title h2 {
   color: #000000;
   font-weight: bold;
-  font-size: 25px !important;
-  margin-top: 0px !important;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 18px !important;
 }
 
 .am-cart-layout-product .am-cart-product-content-title .am-cart-new {
@@ -7922,16 +7920,6 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
   vertical-align: top !important;
   background-color: #ffa1a1 !important;
   margin-left: 5px;
-}
-
-.am-cart-layout-product .am-cart-product-content-desc-img {
-  min-width: auto;
-  max-width: max-content;
-  margin-left: auto;
-  margin-right: auto;
-  width: 500px;
-  max-height: 400px;
-  object-fit: none;
 }
 
 .am-cart-layout-product .am-cart-product-content-desc {
@@ -8344,14 +8332,15 @@ div#grid-user .am-grid-container {
 
 
 .am-cart-layout-product .am-cart-product-content-desc-img {
+  float: left;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   /* Image will take up full width of its container */
-  max-width: 90em;
+  max-width: 35em;
   /* Cap the maximum width */
   height: 100%;
-  max-height: 15em;
+  max-height: 30em;
   object-fit: cover;
   /* Ensure the image covers the space */
 }
@@ -8385,13 +8374,12 @@ div#grid-user .am-grid-container {
   margin-right: 0;
 }
 
-.product-container .am-cart-layout-product {
-  padding: 2.5em;
-}
+.product-container .am-cart-layout-product {padding: 0rem;border-radius: 10px;box-shadow: 0 1px 1px rgba(0,0,0,0.08), 0 2px 2px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.16), 0 8px 8px rgba(0,0,0,0.20);}
+
 
 .am-cart-product-content-title a {
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 300 !important;
   color: black !important;
 }
 
@@ -8602,7 +8590,7 @@ span.am-cart-checkout-paysys-item-description {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   background: white;
   border-radius: 10px;
-
+  min-height: 50rem;
 }
 
 .am-form div.am-element-title .comment {
@@ -8766,4 +8754,45 @@ span.am-list-subscriptions-date_lifetime {
 .pacific-filter-container-name {
   margin-left: .6rem;
   font-weight: 700;
+}
+
+ul.am-tabs .has-children>a::after {
+  display: none;
+  content: " ";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 70%;
+}
+
+.product-container .am-cart-layout-product {
+    box-shadow: none;
+}
+
+.product-container .am-cart-product-content.am-cart-product-content-details {
+    background: white;
+    box-shadow: none;
+}
+
+.product-container .am-cart-product-content-desc-img-wrapper img {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.am-cart-layout-product .am-cart-product-content-product .am-cart-product-content-title {
+  padding: 0 2rem;
+  margin: 0;
+}
+
+.am-cart-layout-product .am-cart-product-content-desc-full {
+  padding: 0 2rem;
+}
+
+.am-cart-layout-product .am-cart-product-content-product {
+  border-bottom: 1px solid #bebebe;
 }

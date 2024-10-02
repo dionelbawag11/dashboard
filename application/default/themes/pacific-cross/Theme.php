@@ -339,24 +339,24 @@ CUT
 CUT
             );
 
-        $gr = $fs->addGroup()
-            ->setLabel(___('User Gravatar in user identity block'));
-        $gr->addHtml()
-            ->setHtml($this->_htmlGravatar());
+//         $gr = $fs->addGroup()
+//             ->setLabel(___('User Gravatar in user identity block'));
+//         $gr->addHtml()
+//             ->setHtml($this->_htmlGravatar());
 
-        $gr->addAdvCheckbox('gravatar');
+//         $gr->addAdvCheckbox('gravatar');
 
-        $form->addScript()
-            ->setScript(<<<CUT
-jQuery(document).on('change', '[name$=gravatar][type=checkbox]', function(){
-    $('#gravatar-yes').toggle(this.checked);
-    $('#gravatar-no').toggle(!this.checked);
-});
-jQuery(function(){
-    $('[name$=gravatar][type=checkbox]').change();
-});
-CUT
-            );
+//         $form->addScript()
+//             ->setScript(<<<CUT
+// jQuery(document).on('change', '[name$=gravatar][type=checkbox]', function(){
+//     $('#gravatar-yes').toggle(this.checked);
+//     $('#gravatar-no').toggle(!this.checked);
+// });
+// jQuery(function(){
+//     $('[name$=gravatar][type=checkbox]').change();
+// });
+// CUT
+//             );
 
         $gr = $fs->addGroup()
             ->setLabel(___('Identity Block Position'));
@@ -738,17 +738,17 @@ CUT
             ->setLabel(___("Logo Image\n" .
                 'keep it empty for default value'))->default = '';
 
-        $form->addAdvRadio(
-            'logo_align',
-            ['class' => 'am-row-highlight'],
-            [
-                'options' => [
-                    'left' => ___('Left'),
-                    'center' => ___('Center'),
-                    'right' => ___('Right')
-                ]
-            ]
-        )->setLabel(___('Logo Position'));
+        // $form->addAdvRadio(
+        //     'logo_align',
+        //     ['class' => 'am-row-highlight'],
+        //     [
+        //         'options' => [
+        //             'left' => ___('Left'),
+        //             'center' => ___('Center'),
+        //             'right' => ___('Right')
+        //         ]
+        //     ]
+        // )->setLabel(___('Logo Position'));
 
         $form->addAdvRadio(
             'logo_width',
@@ -1444,8 +1444,8 @@ CUT
             'bg_repeat' => 'no-repeat',
             'color' => '#f1f5f9',
             'link_color' => '#0079d1',
-            'btn_color' => '#ff8a80',
-            'text_color' => '#303030',
+            'btn_color' => '#ffb933',
+            'text_color' => '#212121',
             'color_c' => '#0e0a06',
             'color_d' => '#bfc3c7',
             'logo_align' => 'left',
@@ -1471,12 +1471,12 @@ CUT
             'header_bg_size' => 'auto',
             'header_bg_repeat' => 'no-repeat',
             'header_bg' => 'none',
-            'menu_color' => '#eb6653',
+            'menu_color' => '#ffb933',
             'menu_dashboard' => 'text',
             'dashboard_layout' => 'two-col',
             'identity_align' => 'right',
             'identity_type' => 'full_name',
-            'page_bg_color' => '#f4f4f4',
+            'page_bg_color' => '#f1f5f9',
             'page_bg' => '#ffffff',
             'header_menu_link_color' => '#ff8a80',
             'header_menu_link2_color' => '#000000',
@@ -1504,18 +1504,20 @@ CUT
                 'bitbucket' => 'bitbucket',
                 'behance' => 'behance',
             ],
-            'view_color' => '#0079d1',
-            'subscription_tab_color' => '#0079d1',
-            'try_color' => '#ff8a80',
-            'faq_bg' => '#e3f2fd',
-            'faq_bg_active' => '#0079d1',
+            'view_color' => '#ffb933',
+            'subscription_tab_color' => '#ffb933',
+            'try_color' => '#ffb933',
+            'faq_bg' => '#ffffff',
+            'faq_text' => '#2a333c',
+            'faq_bg_active' => '#ffffff',
+            'faq_active_text' => '#2a333c',
+            'faq_active_title_text' => '#2a333c',
             'left_right' => 'left',
             'show_hide_expiry' => 'show_expiry',
             'show_hide_nextbill' => 'hide_nextbill',
             'show_hide_lifetime' => 'show_lifetime',
-            'hover_cart' => '#bbdefb',
+            'hover_cart' => '#ffffff',
             'header_top' => '#0079d1'
-
         ];
     }
 }

@@ -297,22 +297,22 @@ ul.am-tabs li {
 }
 
 .accordion-item::before {
-    background: #0079d1;
+    background: #ffb933;
 }
 
 .accordion-item h6 {
-    color: #0079d1;
+    color: #ffb933;
 }
 
 .custom-card::before {
-    background: #0079d1;
+    background: #ffb933;
 }
 
 .custom-card::before {
-    background: #0079d1;
+    background: #ffb933;
 }
 .custom-card h6 {
-    color: #0079d1;
+    color: #ffb933;
 }
 
 .am-page-login-no-label .am-auth-form,
@@ -386,6 +386,8 @@ ul.am-tabs li {
     border-color: #ffb933;
 }
 
+
+
 .am-body-content input[type=submit]:disabled,
 .am-body-content input[type=submit]:disabled:hover,
 .am-body-content input[type=button]:disabled,
@@ -442,6 +444,14 @@ ul.am-header-menu li ul {
 .am-layout-two-coll .am-layout-two-coll-bottom {
     clear: both;
     height: 20px;
+}
+
+.am-layout-two-coll .am-coll-left .am-coll-content {
+    margin: 0;
+}
+
+.am-layout-two-coll .am-coll-right .am-coll-content {
+    margin: 0;
 }
 
 .unsubscribe-label {

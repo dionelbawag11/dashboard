@@ -8,7 +8,7 @@ a:4:{s:4:"data";s:1512:"s:1502:"<div class="admin-last admin-activity">
                                                     <strong>Kai Cennat</strong>
         (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=1" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=1">kai</a>)<!--
     --> logged in from ::1                        <br />
-                        <time class="admin-activity_event-time" datetime="2024-10-02T01:32:54+00:00" title="10/02/24, 01:32 AM">&#x1f550; 3 hrs ago</time>                                    </td>
+                        <time class="admin-activity_event-time" datetime="2024-10-02T01:32:54+00:00" title="10/02/24, 01:32 AM">&#x1f550; 8 hrs ago</time>                                    </td>
             </tr>
                         <tr
                 class="am-grid-row odd admin-activity_event admin-activity_event-signin">
@@ -16,9 +16,9 @@ a:4:{s:4:"data";s:1512:"s:1502:"<div class="admin-last admin-activity">
                                                     <strong>Speed Speed</strong>
         (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=3" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=3">speed</a>)<!--
     --> logged in from ::1                        <br />
-                        <time class="admin-activity_event-time" datetime="2024-10-02T01:24:49+00:00" title="10/02/24, 01:24 AM">&#x1f550; 3 hrs ago</time>                                    </td>
+                        <time class="admin-activity_event-time" datetime="2024-10-02T01:24:49+00:00" title="10/02/24, 01:24 AM">&#x1f550; 8 hrs ago</time>                                    </td>
             </tr>
                     </table>
     </div>
 </div>
-";";s:8:"lifetime";i:2592000;s:6:"expire";i:1730437817;s:8:"priority";i:8;}
+";";s:8:"lifetime";i:2592000;s:6:"expire";i:1730456305;s:8:"priority";i:8;}
