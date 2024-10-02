@@ -498,7 +498,7 @@ ul.am-header-menu li ul {
 }
 
 .faq .faq-title{
-    color: #212121;
+    color: #2a333c;
 }
 
 .faq {
@@ -507,7 +507,7 @@ ul.am-header-menu li ul {
 
 .faq.active{
     color: #2a333c;
-    background-color: #ffffff;
+    background-color: #ffebcd;
 }
 
 .faq.active .faq-text{
@@ -534,5 +534,13 @@ ul.am-tabs li.normal>a:hover::after {
 }
 
 .am-grid th a.sorted-desc::before{
+    color: #ffb933;
+}
+
+.faq-toggle .fa-plus{
+    color: #ffb933;
+}
+
+.faq.active .faq-toggle .fa-minus{
     color: #ffb933;
 }

@@ -536,3 +536,11 @@ ul.am-tabs li.normal>a:hover::after {
 .am-grid th a.sorted-desc::before{
     color: %menu_color%;
 }
+
+.faq-toggle .fa-plus{
+    color: %menu_color%;
+}
+
+.faq.active .faq-toggle .fa-minus{
+    color: %menu_color%;
+}

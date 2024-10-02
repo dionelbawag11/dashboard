@@ -8060,6 +8060,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
   font-size: 15px;
   margin-top: 20px;
   margin-left: 20rem;
+  margin-right: 4rem;
 }
 
 .faq.active .faq-text {
@@ -8086,21 +8087,18 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 }
 
 .faq-toggle .fa-minus,
-.faq.active .faq-toggle .fa-chevron-down {
+.faq.active .faq-toggle .fa-plus {
   display: none;
 }
 
 .faq.active .faq-toggle .fa-minus {
-  color: #fff;
+  color: black;
   display: block;
 }
 
-.faq-toggle .fa-chevron-down {
+.faq-toggle .fa-plus {
   display: block;
-}
-
-.faq.active .faq-toggle {
-  background-color: #000000;
+  color: #000;
 }
 
 .faq-toggle {
@@ -8109,7 +8107,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
   border-radius: 0px !important;
   position: absolute;
   top: 10px;
-  background: black !important;
+  background: transparent !important;
 }
 
 
@@ -8717,4 +8715,8 @@ li.am-helpdesk-faq-cat-item h2{
 
 .faq{
   color: #8a8a8a;
+}
+
+.faq .faq-title {
+font-weight: 100;
 }
