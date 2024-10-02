@@ -3216,7 +3216,7 @@ ul.am-widget-list li {
 .am-input-filter-wrapper {
   overflow: hidden;
   padding: 0.4em;
-  border: 1px solid #000000;
+  border: 1px solid #b5b5b5;
   margin-bottom: 1em;
 }
 
@@ -8672,4 +8672,15 @@ ul.am-tabs li>a::after {
     height: 1px;
     background-color: #e74c3c; /* Same color for consistency */
     transition: width 0.4s ease, left 0.4s ease;
+}
+
+.active-subscription-flex-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  margin: auto;
+}
+
+.settings-container{
+  margin-left: auto;
 }

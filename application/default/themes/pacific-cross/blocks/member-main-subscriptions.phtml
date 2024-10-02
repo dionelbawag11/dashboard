@@ -1,34 +1,38 @@
 <?php if ($member_products || $member_future_products): ?>
     <ul id="member-subscriptions" class="am-widget-list am-list-subscriptions grid-view">
-        <div class="settings-container">
-            <?php if (count($member_products) + count($member_future_products) > 3): ?>
-                <div class="am-input-filter-wrapper" data-search-scope="subscription"
-                    style="width: 200px; margin-left: 10px; border-radius: 8px;">
-                    <div class="am-input-filter-inner-wrapper">
-                        <input class="am-input-filter" type="text" name="q" autocomplete="off"
-                            placeholder="<?php __e('Type to Filter…') ?>" />
-                        <div class="am-input-filter-empty">&nbsp;</div>
-                    </div>
-                </div>
-            <?php endif; ?>
-           
-            <div id="display-options" class="display-options" style="margin-left: 20px; margin-top: 2px;">
-                <span id="grid-view-icon" class="view-icon active" onclick="changeView('grid')">
-                    <i class="fa fa-list"></i> <!-- List icon -->
-                </span>
-                <span id="list-view-icon" class="view-icon" onclick="changeView('list')">
-                    <i class="fa fa-th-large"></i> <!-- Grid icon -->
-                </span>
-                <span id="accordion-view-icon" class="view-icon" onclick="changeView('accordion')">
-                    <i class="fa fa-caret-down"></i> <!-- Accordion icon -->
-                </span>
+        <div class="active-subscription-flex-container">
+            <div id="subscription-tabs" class="subscription-tabs">
+                <span id="all-tab" class="tab active" onclick="filterSubscriptions('all')">All</span>
+                <span id="expires-tab" class="tab" onclick="filterSubscriptions('expires')"><?php __e('Expires') ?></span>
+                <span id="next-bill-tab" class="tab"
+                    onclick="filterSubscriptions('next-bill')"><?php __e('Next Bill') ?></span>
+                <span id="lifetime-tab" class="tab"
+                    onclick="filterSubscriptions('lifetime')"><?php __e('Lifetime') ?></span>
             </div>
-        </div>
-        <div id="subscription-tabs" class="subscription-tabs">
-            <span id="all-tab" class="tab active" onclick="filterSubscriptions('all')">All</span>
-            <span id="expires-tab" class="tab" onclick="filterSubscriptions('expires')"><?php __e('Expires') ?></span>
-            <span id="next-bill-tab" class="tab" onclick="filterSubscriptions('next-bill')"><?php __e('Next Bill') ?></span>
-            <span id="lifetime-tab" class="tab" onclick="filterSubscriptions('lifetime')"><?php __e('Lifetime') ?></span>
+            <div class="settings-container">
+                <?php if (count($member_products) + count($member_future_products) > 3): ?>
+                    <div class="am-input-filter-wrapper" data-search-scope="subscription">
+                        <div class="am-input-filter-inner-wrapper">
+                            <input class="am-input-filter" type="text" name="q" autocomplete="off"
+                                placeholder="<?php __e('Type to Filter…') ?>" />
+                            <div class="am-input-filter-empty">&nbsp;</div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+                <div id="display-options" class="display-options">
+                    <span id="grid-view-icon" class="view-icon active" onclick="changeView('grid')">
+                        <i class="fa fa-list"></i> <!-- List icon -->
+                    </span>
+                    <span id="list-view-icon" class="view-icon" onclick="changeView('list')">
+                        <i class="fa fa-th-large"></i> <!-- Grid icon -->
+                    </span>
+                    <span id="accordion-view-icon" class="view-icon" onclick="changeView('accordion')">
+                        <i class="fa fa-caret-down"></i> <!-- Accordion icon -->
+                    </span>
+                </div>
+            </div>
+
         </div>
         <div id="grid-view" class="view-mode grid-view" style="display: block;">
             <?php foreach ($member_products as $p): ?>
@@ -180,7 +184,7 @@
             <?php endforeach; ?>
         </div>
 
-        
+
         <div id="accordion-view" class="view-mode" style="height: 100%;
   flex-wrap: wrap;
   align-items: center;

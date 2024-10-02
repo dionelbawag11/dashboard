@@ -485,8 +485,8 @@ ul.am-header-menu li ul {
 }
 
 .subscription-tabs .tab.active{
-    color: #2a333c; /* Adjust to your theme */
-    border-bottom: 2px solid #2a333c; /* Adjust to your theme */
+    color: #ffb933; /* Adjust to your theme */
+    border-bottom: 2px solid #ffb933; /* Adjust to your theme */
 }
 
 .tb-popover-wrapper:hover .tb-popover-content {
