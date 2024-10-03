@@ -6885,7 +6885,10 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 }
 
 .am-cart-layout-product .am-cart-product-content-add-container {
-  padding: 0 !important;
+  padding: 0 0 0 2em !important;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .am-cart-main {
@@ -7208,6 +7211,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 }
 
 .am-basket-preview-item-total {
+  font-weight: 600;
   text-align: right;
 }
 
@@ -7413,7 +7417,6 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 
 .cart-right-section {
   height: 50px;
-  margin-left: 12px;
 }
 
 .cart-col-sm-4 {
@@ -7624,12 +7627,10 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 #widget-my-block-id,
 #widget-member-main-unsubscribe {
   background: white;
-  border-radius: 14px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
   padding: 20px;
   margin-bottom: 1.5em;
-  border-radius: 14px;
 }
 
 #member-main-resources,
@@ -7890,7 +7891,6 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 }
 
 #widget-member-main-subscriptions {
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   min-height: 700px;
   padding-top: 2em;
   background: white;
@@ -7944,7 +7944,6 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 }
 
 .am-cart-layout-product .am-cart-product-content-add-container>div>div[style*="position: absolute;"] {
-
   display: flex !important;
   flex-direction: column !important;
   position: sticky !important;
@@ -8236,7 +8235,7 @@ div#row-category_id-0 .am-element-title {
   margin-left: 25%;
   margin-right: 25%;
   font-size: 20px;
-  margin-bottom: 1.5em;
+  margin-bottom: 1rem;
 }
 
 div#row-category_id-0 am-element-title {
@@ -8244,17 +8243,17 @@ div#row-category_id-0 am-element-title {
 }
 
 div#row-subject-0 .am-element-title {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   font-size: 20px;
 }
 
 div#row-content-0 .am-element-title {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   font-size: 20px;
 }
 
 textarea#content-0 {
-  border: 1px solid black;
+  border: 1px solid #bebebe;
 }
 
 div#grid-user .am-grid-container .am-grid th {
@@ -8289,11 +8288,6 @@ div#grid-user .am-grid-container {
   max-height: 150px;
   min-height: 150px;
   object-fit: cover;
-}
-
-
-.am-cart {
-  margin-left: 12px;
 }
 
 .grid-view .grid-item .am-list-subscriptions-date {
@@ -8587,7 +8581,7 @@ span.am-cart-checkout-paysys-item-description {
 
 .pacific-cart-layout {
   padding: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
   background: white;
   border-radius: 10px;
   min-height: 50rem;
@@ -8652,7 +8646,7 @@ ul.am-tabs li>a::after {
 
 div#grid-user {
   padding: 3rem;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
   background: white;
   border-radius: 10px;
 }
@@ -8662,6 +8656,7 @@ div#grid-user h1.am-grid-title {
 }
 
 div#grid-user .am-filter-wrap {
+  margin: 0;
   padding: 0;
 }
 
