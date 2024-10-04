@@ -136,7 +136,6 @@ $isViewBasketUrl = ($currentUrl === $viewBasketUrl);
                 </li>
             <?php endforeach ?>
         </div>
-        <li class="basket-divider"></li>
         <div class="totals-container">
             <li class="basket-totals basket-subtotal">
                 <span class="basket-label"><?php __e('Subtotal') ?></span>
@@ -165,25 +164,32 @@ $isViewBasketUrl = ($currentUrl === $viewBasketUrl);
                 <span class="basket-label"><?php __e('Total') ?></span>
                 <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_total)) ?></span>
             </li>
-
-            <div class="am-cart-checkout-buttons">
-                <input type="submit" class="am-cart-checkout-buttons-checkout" name="do-checkout"
-                    value="<?php __e('Checkout') ?>" />
-                <input type="submit" class="am-cart-checkout-buttons-update" name="calculate"
-                    value="<?php __e('Update') ?>" />
-                <?php if ($isAjax): ?>
-                    <a href="javascript:;" onclick="jQuery('#ajax-basket').amPopup('close');"
-                        class="local-link"><?php __e('Continue Shopping') ?></a>
-                <?php else: ?>
-                    <a href="<?php p((isset($b) && $b) ? $b : $this->url('cart', false)) ?>"
-                        class="am-cart-checkout-buttons-continue"><?php __e('Continue Shopping') ?></a>
-                <?php endif; ?>
-                <input type="hidden" name="b" value="<?php p($b) ?>" />
-            </div>
         </div>
     </div>
     <div class="basket-flexx">
-        <span class="basket-title"><?php __e('Payment Details') ?></span>
+        <div class="checkout-final-container">
+            <div class="basket-checkout-title-header-container">
+                <span class="basket-title"><?php __e('Payment Details') ?></span>
+            </div>
+            <div class="continue-shopping-container-header">
+                <div class="am-cart-checkout-buttons">
+                    <div class="hide-container">
+                        <input type="submit" class="am-cart-checkout-buttons-checkout" name="do-checkout"
+                            value="<?php __e('Checkout') ?>" />
+                        <input type="submit" class="am-cart-checkout-buttons-update" name="calculate"
+                            value="<?php __e('Update') ?>" />
+                        <?php if ($isAjax): ?>
+                            <a href="javascript:;" onclick="jQuery('#ajax-basket').amPopup('close');"
+                                class="local-link"><?php __e('Continue Shopping') ?></a>
+                        <?php else: ?>
+                        </div>
+                        <a href="<?php p((isset($b) && $b) ? $b : $this->url('cart', false)) ?>"
+                            class="am-cart-checkout-buttons-continue"><?php __e('Continue Shopping') ?></a>
+                    <?php endif; ?>
+                    <input type="hidden" name="b" value="<?php p($b) ?>" />
+                </div>
+            </div>
+        </div>
         <h2 class="payment-head-title">
             <?php
             if (count($paysystems) > 1):
@@ -191,11 +197,9 @@ $isViewBasketUrl = ($currentUrl === $viewBasketUrl);
             elseif (count($paysystems) == 1):
                 __e('Payment Method');
             endif;
-
             ?>
         </h2>
-
-        <li class="basket-divider"></li>
+        <div class="basket-divider-container">
         <div id="choose-paysys-wrapper">
             <div id="ps-errors-container"></div>
             <div class="am-cart-checkout-paysys">
@@ -214,12 +218,16 @@ $isViewBasketUrl = ($currentUrl === $viewBasketUrl);
                 <?php endforeach ?>
             </div>
         </div>
-
-        <li class="basket-totals basket-grandtotal">
-            <span class="basket-label"><?php __e('Total') ?></span>
-            <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_total)) ?></span>
-        </li>
-        <button id="triggerCheckoutButton">Proceed to Checkout</button>
+        <div class="checkout-payment-container">
+            <button id="triggerCheckoutButton">
+                <i class="fas fa-lock"></i>
+                Pay 
+                <span class="basket-amount">
+                    <?php p($cart->getCurrency($cart->getInvoice()->first_total)) ?>
+                </span>
+            </button>
+        </div>
+        </div>
     </div>
 </ul>
 

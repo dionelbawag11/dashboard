@@ -7120,6 +7120,9 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 .am-cart-checkout .am-cart-checkout-paysys .am-cart-checkout-paysys-item {
   padding: 0;
   border: 0;
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .am-cart-checkout .am-cart-checkout-paysys .am-cart-checkout-paysys-item input[type=radio] {
@@ -8831,4 +8834,43 @@ ul.am-tabs .has-children>a::after {
 
 .hide-container{
   display: none;
+}
+
+.checkout-final-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+
+}
+.continue-shopping-container-header {
+  margin-left: auto 
+}
+
+.checkout-payment-container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 96%;
+}
+
+.checkout-payment-container button#triggerCheckoutButton {
+  width: 100%;
+}
+
+button#triggerCheckoutButton {
+  font-weight: 800;
+  font-size: 1.19rem;
+}
+
+.basket-divider-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+button#triggerCheckoutButton .basket-amount {
+  margin: 0 .1rem 0 .1rem;
+}
+
+button#triggerCheckoutButton .fa-lock {
+  margin: 0 .5rem 0 .5rem;
 }
