@@ -6794,7 +6794,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .am-cart .am-cart-product .am-cart-product-content-product {
@@ -7110,7 +7110,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 
 .am-cart-checkout {
   overflow: hidden;
-  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .am-cart-checkout .am-cart-checkout-paysys {
@@ -7241,9 +7241,9 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 }
 
 #cart-basket {
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   border-color: #000000;
-  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 @media all and (max-width: 600px) {
@@ -8097,13 +8097,12 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 
 
 #faq-block {
-  border-radius: 10px;
   padding: 2rem;
   width: 20%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0;
-  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.20);
   border: 0;
 }
 
@@ -8333,22 +8332,32 @@ div#grid-user .am-grid-container {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  /* Image will take up full width of its container */
+  max-width: 35em;
+  /* Cap the maximum width */
   height: 100%;
   max-height: 30em;
   object-fit: cover;
+  /* Ensure the image covers the space */
 }
 
 @media (max-width: 768px) {
 
+  /* For tablets and smaller screens */
   .am-cart-layout-product .am-cart-product-content-desc-img {
     max-width: 100%;
+    /* Allow the image to shrink for smaller screens */
     height: auto;
+    /* Maintain aspect ratio */
   }
 }
 
 @media (max-width: 480px) {
+
+  /* For mobile devices */
   .am-cart-layout-product .am-cart-product-content-desc-img {
     max-width: 100%;
+    /* Ensure the image scales down properly */
     height: auto;
   }
 }
@@ -8675,7 +8684,7 @@ div#grid-user .am-grid-container {
   border-radius: 10px;
   background: white;
   width: 70%;
-  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11);
   padding: 2rem;
 }
 h1.faq-categories-title {

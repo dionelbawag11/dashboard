@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 a:4:{s:4:"hash";i:3530901079;s:5:"mtime";i:1728016497;s:6:"expire";i:1728016617;s:4:"tags";a:0:{}}
+=======
+a:4:{s:4:"hash";i:583665079;s:5:"mtime";i:1727922533;s:6:"expire";i:1727922653;s:4:"tags";a:0:{}}
+>>>>>>> parent of 8813632 (fix the delete in checkout)

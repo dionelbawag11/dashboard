@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 a:4:{s:4:"data";s:4:"i:0;";s:8:"lifetime";i:30;s:6:"expire";i:1728016517;s:8:"priority";i:8;}
+=======
+a:4:{s:4:"data";s:4:"i:0;";s:8:"lifetime";i:30;s:6:"expire";i:1727922563;s:8:"priority";i:8;}
+>>>>>>> parent of 8813632 (fix the delete in checkout)
