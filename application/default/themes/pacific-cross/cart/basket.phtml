@@ -27,10 +27,10 @@ $isBasket = true;
 </div>
 
 <?php echo $this->blocks('cart/basket/after') ?>
-<?php if ($isAjax): ?>
+<?php if ($isAjax) : ?>
     <script type="text/javascript">
         jQuery(function () {
-            jQuery('.am-cart-checkout-buttons-update, .am-cart-checkout-buttons-apply').click(function () {
+            jQuery('.am-cart-checkout-buttons-update, .am-cart-checkout-buttons-apply').click(function() {
                 var f = jQuery(this).closest('form');
                 jQuery.post(f.attr('action'), f.serializeArray(), function (html) {
                     cart.loadOnly();

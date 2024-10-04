@@ -74,4 +74,10 @@
             }
         });
     })();
+
+    jQuery('.am-basket-delete > a').click(function () {
+        jQuery(this).find('input').attr('checked', 'checked');
+        jQuery(this).closest('form').find('.am-cart-checkout-buttons-update').click();
+    });
+
 </script>
