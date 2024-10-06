@@ -8857,7 +8857,7 @@ ul.am-tabs .has-children>a::after {
 }
 
 button#triggerCheckoutButton {
-  font-weight: 800;
+  font-weight: 100;
   font-size: 1.19rem;
 }
 
