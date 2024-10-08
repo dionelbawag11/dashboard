@@ -7110,7 +7110,7 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 
 .am-cart-checkout {
   overflow: hidden;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .am-cart-checkout .am-cart-checkout-paysys {
@@ -8100,12 +8100,13 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 
 
 #faq-block {
+  border-radius: 10px;
   padding: 2rem;
   width: 20%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.20);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border: 0;
 }
 
@@ -8691,7 +8692,7 @@ div#grid-user .am-grid-container {
   border-radius: 10px;
   background: white;
   width: 70%;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 2rem;
 }
 
