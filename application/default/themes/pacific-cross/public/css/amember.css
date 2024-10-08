@@ -8115,6 +8115,72 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
 }
 
 
+div#row-save-0 .am-element {
+  margin-left: 0;
+  padding: 0;
+}
+
+div#grid-user .am-filter-wrap {
+  width: 40%;
+  float: left;
+  background: transparent;
+}
+ 
+
+div#row-category_id-0 .am-element {
+  margin-left: 25%;
+  margin-right: 25%;
+  font-size: 16px;
+  padding: 0;
+} 
+
+
+div#grid-user .am-norecord-actions {
+  float: right;
+  margin-right: -2px;
+}
+
+div#grid-user .am-form form {
+  box-shadow: none;
+  border: none;
+}
+
+div#grid-user .filter-inputs input {
+  background: transparent;
+}
+
+div#grid-user .filter-button {
+  display: none;
+}
+
+div#grid-user .filter-inputs {
+  float: left;
+}
+
+textarea#content-0 {
+  border: 1px solid #bebebe;
+}
+
+div#grid-user .am-grid-container .am-grid th {
+  background: white;
+  font-size: 18px;
+}
+
+div#grid-user .am-grid-container {
+  width: 100%;
+}
+div#row-category_id-0 .am-element-title {
+  text-align: left;
+  width: auto;
+  float: none;
+  padding: 0;
+} 
+div#row-category_id-0 .am-element-title {
+  margin-left: 1rem;
+  } 
+/* 
+
+
 div#row-content-0 .am-element-title {
   padding: 0;
 }
@@ -8132,34 +8198,8 @@ div#row-subject-0 .am-element {
   padding: 0;
 }
 
-div#row-category_id-0 .am-element-title {
-  text-align: left;
-  width: auto;
-  float: none;
-  padding: 0;
-}
 
-div#row-category_id-0 .am-element {
-  margin-left: 25%;
-  margin-right: 25%;
-  font-size: 16px;
-  padding: 0;
-}
 
-div#grid-user h1 {}
-
-div#row-save-0 .am-element {
-  margin-left: 0;
-  padding: 0;
-}
-
-div#grid-user .am-filter-wrap {
-  width: 40%;
-  float: left;
-  background: transparent;
-}
-
-div#grid-user .am-grid-container .am-grid {}
 
 div#row-subject-0 {
   float: right;
@@ -8175,11 +8215,6 @@ div#row-category_id-0 {
 div#row-content-0 {
   width: 50%;
   float: right;
-}
-
-div#grid-user .am-form form {
-  box-shadow: none;
-  border: none;
 }
 
 div#row-subject-0 {
@@ -8258,35 +8293,7 @@ div#row-content-0 .am-element-title {
   font-size: 20px;
 }
 
-textarea#content-0 {
-  border: 1px solid #bebebe;
-}
-
-div#grid-user .am-grid-container .am-grid th {
-  background: white;
-  font-size: 18px;
-}
-
-div#grid-user .filter-inputs input {
-  background: transparent;
-}
-
-div#grid-user .filter-button {
-  display: none;
-}
-
-div#grid-user .filter-inputs {
-  float: left;
-}
-
-div#grid-user .am-norecord-actions {
-  float: right;
-  margin-right: -2px;
-}
-
-div#grid-user .am-grid-container {
-  width: 100%;
-}
+ */
 
 
 .active-subs-product-img {
@@ -8512,6 +8519,7 @@ span.am-cart-checkout-paysys-item-description {
 }
 
 .totals-container {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
 }
