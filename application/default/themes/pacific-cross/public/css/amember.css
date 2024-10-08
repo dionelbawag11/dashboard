@@ -8159,6 +8159,7 @@ div#grid-user .filter-inputs {
 
 textarea#content-0 {
   border: 1px solid #bebebe;
+  width: 70%;
 }
 
 div#grid-user .am-grid-container .am-grid th {
@@ -8178,6 +8179,10 @@ div#row-category_id-0 .am-element-title {
 div#row-category_id-0 .am-element-title {
   margin-left: 1rem;
   } 
+
+  input#subject-0{
+    width: 70%;
+  }
 /* 
 
 
