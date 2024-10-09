@@ -1,0 +1,24 @@
+a:4:{s:4:"data";s:1512:"s:1502:"<div class="admin-last admin-activity">
+    <h2>Recent Activity</h2>
+    <div class="am-grid-container">
+        <table class="am-grid grid-no-highlight">
+                        <tr
+                class="am-grid-row even admin-activity_event admin-activity_event-signin">
+                <td>
+                                                    <strong>Kai Cennat</strong>
+        (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=1" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=1">kai</a>)<!--
+    --> logged in from ::1                        <br />
+                        <time class="admin-activity_event-time" datetime="2024-10-08T06:26:55+00:00" title="10/08/24, 06:26 AM">&#x1f550; 8 hrs ago</time>                                    </td>
+            </tr>
+                        <tr
+                class="am-grid-row odd admin-activity_event admin-activity_event-signin">
+                <td>
+                                                    <strong>Speed Speed</strong>
+        (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=3" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=3">speed</a>)<!--
+    --> logged in from ::1                        <br />
+                        <time class="admin-activity_event-time" datetime="2024-10-08T05:37:17+00:00" title="10/08/24, 05:37 AM">&#x1f550; 9 hrs ago</time>                                    </td>
+            </tr>
+                    </table>
+    </div>
+</div>
+";";s:8:"lifetime";i:2592000;s:6:"expire";i:1730992934;s:8:"priority";i:8;}

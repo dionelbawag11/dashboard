@@ -13,7 +13,8 @@
                         alt="<?php p($product->title) ?>" title="<?php p($product->title) ?>" />
                 <?php else: ?>
                     <a href="<?php p($product_url) ?>"><img class="am-cart-product-content-desc-img"
-                            src="<?php echo $this->url("data/public/{$product->img_path}") ?>" alt="<?php p($product->title) ?>" title="<?php p($product->title) ?>" /></a>
+                            src="<?php echo $this->url("data/public/{$product->img_path}") ?>"
+                            alt="<?php p($product->title) ?>" title="<?php p($product->title) ?>" /></a>
                 <?php endif; ?>
             </div>
             <div class="am-cart-product-content-title">
@@ -51,9 +52,8 @@
         </div>
         <div class="am-cart-product-content-add-container">
             <div style="flex: 50%;">
-
                 <div style="  display: flex;
-  flex-direction: column;">
+flex-direction: column;">
                     <?php $plans = $product->getBillingPlans(true); ?>
                     <?php if (!empty($displayProductDetails) || !$product->getOptions() || count($plans) == 1): ?>
                         <div class="am-cart-product-content-terms">
@@ -131,6 +131,7 @@
             </div>
         </div>
     </div>
+    <?php if (!empty($product->cart_description)): ?>
     <div class="tb-popover-content">
         <div class="am-cart-product-content-title">
             <?php if (empty($displayProductDetails)): ?>
@@ -141,26 +142,13 @@
             <?php endif; ?>
         </div>
         <div style="height: 2px; margin-bottom: 15px; margin-top: 5px; background: black;"></div>
-        <div class="am-cart-product-content-desc">
-            <?php if (
-                (!empty($displayProductDetails) && $product->img_detail_path) ||
-                (empty($displayProductDetails) && $product->img_path)
-            ): ?>
-            <?php endif ?>
-            <div class="am-cart-product-content-desc-full">
-                <?php if (empty($displayProductDetails)): ?>
-                    <div class="am-cart-product-content-desc-full">
-                        <?php echo $this->blocks('cart/product/desc/top', '%s', ['product' => $product, 'displayProductDetails' => !empty($displayProductDetails)]); ?>
-                        <?php echo $product->getDescription(false); ?>
-                        <?php echo $this->blocks('cart/product/desc/bottom', '%s', ['product' => $product, 'displayProductDetails' => !empty($displayProductDetails)]); ?>
-                    </div>
-                <?php else: ?>
-                    <div class="am-cart-product-content-desc-short">
-                        <?php echo $this->blocks('cart/product/desc/top', '%s', ['product' => $product, 'displayProductDetails' => !empty($displayProductDetails)]); ?>
-                        <?php echo $product->cart_description ?: $product->getDescription(false) ?>
-                        <?php echo $this->blocks('cart/product/desc/bottom', '%s', ['product' => $product, 'displayProductDetails' => !empty($displayProductDetails)]); ?>
-                    </div>
-                <?php endif; ?>
+
+            <div class="am-cart-product-content-desc">
+                <div class="am-cart-product-content-desc-full">
+                    <?php echo $this->blocks('cart/product/desc/top', '%s', ['product' => $product, 'displayProductDetails' => !empty($displayProductDetails)]); ?>
+                    <?php echo $product->cart_description; ?>
+                    <?php echo $this->blocks('cart/product/desc/bottom', '%s', ['product' => $product, 'displayProductDetails' => !empty($displayProductDetails)]); ?>
+                </div>
             </div>
-        </div>
     </div>
+    <?php endif; ?>
