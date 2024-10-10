@@ -45,9 +45,6 @@ class Bootstrap_Cart extends Am_Module
             'cart/basket/before' => 'Basket (Top)',
             'cart/basket/after' => 'Basket (Bottom)',
             'cart/right' => 'Sidebar',
-            'cart/category/before' => 'Categories top',
-            'cart/category' => 'Categories',
-            'cart/category/after' => 'Categories bottom'
         ];
         $e->setReturn($_);
     }
@@ -123,6 +120,9 @@ class Bootstrap_Cart extends Am_Module
                 case 'category':
                     $b->add('cart/right', new Am_Widget_CartCategorySelect);
                     break;
+                case 'search':
+                    $b->add('cart/right', new Am_Widget_CartSearch);
+                    break;
                 case 'basket':
                     $b->add('cart/right', new Am_Widget_CartBasket);
                     break;
@@ -134,7 +134,6 @@ class Bootstrap_Cart extends Am_Module
                     break;
             }
         }
-        $b->add('cart/category', new Am_Widget_CartCategorySelect);
     }
 
     /**
@@ -319,6 +318,7 @@ CUT;
         $e->getGrid()->setFormValueCallback('meta_robots', ['RECORD', 'unserializeList'], ['RECORD', 'serializeList']);
         $e->getGrid()->addField('cart_new', ___('Is New?'));
         $e->getGrid()->actionAdd(new Am_Grid_Action_LiveCheckbox('cart_new'));
+        $e->getGrid()->actionAdd(new Am_Grid_Action_Group_ProductPicture());
     }
 
     function onGridProductInitForm(Am_Event $e)

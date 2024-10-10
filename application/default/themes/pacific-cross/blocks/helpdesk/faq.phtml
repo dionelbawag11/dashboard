@@ -41,3 +41,15 @@
     </div>
 <?php endif; ?>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+ // FAQ toggles
+ const toggles = document.querySelectorAll(".faq-toggle");
+ toggles.forEach(toggle => {
+     toggle.addEventListener("click", () => {
+         toggle.parentElement.classList.toggle("active");
+     });
+ });
+  });
+</script>

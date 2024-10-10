@@ -9,42 +9,13 @@ $this->headScript()
 ?>
 <?php echo $this->blocks('cart/top') ?>
 <div class="pacific-cart-layout">
-<div class="row cart-right-section">
-    <div class="cart-col-sm-4">
-        <div>
-            <div class="am-cart-search"> <?php /* Shopping cart search */ ?>
-                <form method="get" action="<?php echo $this->url('cart/index/search') ?>"
-                    style="position: relative; display: flex; align-items: center;">
-                    <button type="submit"
-                        style="position: absolute; left: 10px; background: none; border: none; padding: 0; cursor: pointer;">
-                        <i class="fa fa-search" style="color: #868686;"></i>
-                    </button>
-                    <input type="text" name="q" value="<?php p(@$_REQUEST['q']) ?>" placeholder="Search..."
-                        style="padding-left: 30px;">
-                </form>
 
-            </div>
-        </div>
-
-    </div>
-    <div class="cart-col-sm-4">
-        <div>
-            <?php echo $this->blocks('cart/category') ?>
-        </div>
-    </div>
-    <div class="cart-col-sm-6" style="float: right; margin-right: 21rem;">
-        <div>
-            <a href="<?php echo $this->url('cart'); ?>"><?php __e('Back to shopping') ?></a>
-        </div>
-    </div>
-</div>
 <div class="am-cart <?php echo $this->blocks()->get('cart/right') ? '' : 'am-cart-nosidebar' ?>">
     <div class="am-cart-sidebar">
         <?php echo $this->blocks('cart/right', '<div class="am-block block" id="%3$s">
-        <h1 id="%3$s-head" style="text-align: center;">%2$s</h1>
-        <div style="height: 1px;margin-bottom: 20px;margin-top: 20px;background: #a3a3a3;"></div>
+        <h1 id="%3$s-head" style="font-weight: 600; text-align: center; font-size: 1.5rem;">%2$s</h1>
+        <div style="height: 1px; background: #a3a3a3;"></div>
         <h2 style="margin-bottom: .5em;"></h2>
-        <h2 style="margin-bottom: .5em;">Order details</h2>
         %1$s</div>'); ?>
     </div>
     <div class="am-cart-main">

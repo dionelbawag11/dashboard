@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 .select2-container {
   box-sizing: border-box;
   display: inline-block;
@@ -5487,8 +5488,3 @@ ul.am-aff-banner-cat-list li.am-aff-banner-cat-list-item {
   padding-bottom: 1em;
 }
 
-
-
-div#moodle-block-id{
-  height: 50em;
-}
