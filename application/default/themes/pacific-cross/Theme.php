@@ -121,14 +121,14 @@ CUT
         $gr->addText('max_width', ['size' => 3]);
         $gr->addHtml()->setHtml('px');
 
-        // $gr = $fs->addGroup()
-        //     ->setLabel(___('Border Radius'));
-        // $gr->setSeparator(' ');
-        // $gr->addText('border_radius', ['size' => 3, 'placeholder' => 0]);
-        // $gr->addHtml()->setHtml('px');
+        $gr = $fs->addGroup()
+            ->setLabel(___('Border Radius'));
+        $gr->setSeparator(' ');
+        $gr->addText('border_radius', ['size' => 3, 'placeholder' => 0]);
+        $gr->addHtml()->setHtml('px');
 
-        // $fs->addAdvCheckbox('drop_shadow')
-        //     ->setLabel(___('Drop Shadow'));
+        $fs->addAdvCheckbox('drop_shadow')
+            ->setLabel(___('Drop Shadow'));
 
         $gr = $fs->addGroup()
             ->setLabel(___("Font\nSize and Family"));

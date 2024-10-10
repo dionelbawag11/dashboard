@@ -1114,7 +1114,6 @@ CUT
             "url('{$url}') {$after->get($t_c)} center 1em no-repeat" :
             $after->get($t_c));
 
-        //padding
         $t_id = "themes.{$this->getId()}.login_logo";
         $t_new = "themes.{$this->getId()}.login_legend_padding_top";
 

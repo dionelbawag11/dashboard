@@ -689,11 +689,11 @@ div#moodle-block-id{
     /* Optional: adds space between items */
   }
   
-  .am-cart-product-status,
+  /* .am-cart-product-status,
   .am-cart-product-content-terms,
   .am-cart-product-content-buttons {
     flex: 1;
-  }
+  } */
   
   .am-cart .am-cart-product.am-cart-product-brief {
     border: none;
@@ -727,7 +727,9 @@ div#moodle-block-id{
   
   .am-cart .am-cart-product .am-cart-product-status {
     color: #5f5f5f;
-    margin: 0 0 1em 0;
+    position: relative;
+    top: 5px;
+    margin-left: 1rem;
   }
   
   .am-cart .am-cart-product .am-cart-product-content-title {
@@ -753,8 +755,10 @@ div#moodle-block-id{
   }
   
   .am-cart .am-cart-product .am-cart-product-content-terms {
-    margin-bottom: 0.5em;
+    margin-bottom: 0;
     font-weight: bold;
+    position: relative;
+    top: 5px;
   }
   
   .am-cart .am-cart-product .am-cart-product-content-desc {
@@ -1551,8 +1555,6 @@ div#moodle-block-id{
   #widget-my-block-id,
   #widget-member-main-unsubscribe {
     background: white;
-    border-radius: 10px;
-    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
     padding: 20px;
     margin-bottom: 1.5em;
   }
@@ -1817,7 +1819,6 @@ div#moodle-block-id{
     min-height: 700px;
     padding-top: 2em;
     background: white;
-    border-radius: 14px;
     margin-bottom: 1em;
   }
   
@@ -2863,4 +2864,79 @@ div#moodle-block-id{
 }
 .am-basket-preview-actions-divider {
   display: none;
+}
+
+.whatif::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-card:hover .hover_content::-webkit-scrollbar {
+  display: none;
+}
+
+.accordion-item:hover .hover_content::-webkit-scrollbar {
+  display: none;
+}
+
+#member-subscriptions::-webkit-scrollbar {
+  display: none;
+}
+
+.grid-view .subscription-item::-webkit-scrollbar {
+  display: none;
+}
+
+.whatif {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.custom-card:hover .hover_content {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.accordion-item:hover .hover_content {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+#member-subscriptions {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.grid-view .subscription-item {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.am-basket-delete a {
+  text-decoration: none;
+}
+
+.am-cart-checkout-coupon-wrapper {
+  padding-left: 1rem;
+}
+
+.am-cart-checkout-coupon {
+  display: flex;
+  flex-direction: row;
+}
+
+.am-cart-coupon-text {
+  font-weight: 800;
+  position: relative;
+  top: 8px;
+  margin-right: 2rem;
+}
+
+.am-cart-product-button-container-flex {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+}
+
+.product-container .am-cart-layout-product .am-cart-product-status {
+  margin-left: 0;
 }

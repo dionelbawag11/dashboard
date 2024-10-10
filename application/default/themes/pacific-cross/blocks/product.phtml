@@ -51,9 +51,7 @@
             </div>
         </div>
         <div class="am-cart-product-content-add-container">
-            <div style="flex: 50%;">
-                <div style="  display: flex;
-flex-direction: column;">
+            <div class="am-cart-product-status-container-flex">
                     <?php $plans = $product->getBillingPlans(true); ?>
                     <?php if (!empty($displayProductDetails) || !$product->getOptions() || count($plans) == 1): ?>
                         <div class="am-cart-product-content-terms">
@@ -93,15 +91,8 @@ flex-direction: column;">
                             </div>
                         <?php endif; ?>
                     <?php endif; ?>
-                </div>
-
             </div>
-            <div style="flex: 50%;">
-                <div style="  display: flex;
-  flex-direction: column;
-  position: absolute;
-  right: 10px;
-">
+            <div class="am-cart-product-button-container-flex">
                     <?php if (isset($opForm)): ?>
                         <div class="am-cart-product-content-options">
                             <?php echo $opForm ?>
@@ -127,7 +118,6 @@ flex-direction: column;">
                         <?php $item = $this->cart->getItem($product) ?>
                         <?php include $this->_script('cart/_product_status.phtml') ?>
                     </div>
-                </div>
             </div>
         </div>
     </div>

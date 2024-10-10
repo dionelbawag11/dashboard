@@ -12,7 +12,6 @@ $isBasket = true;
         <?php if (count($cart->getItems())): ?>
             <form action="<?php echo $this->url('cart/view-basket') ?>" method="post">
                 <?php include $this->_script('cart/_basket.phtml') ?>
-                <?php include $this->_script('cart/_coupon.phtml') ?>
             </form>
         <?php else: ?>
             <div class="am-cart-checkout-empty">

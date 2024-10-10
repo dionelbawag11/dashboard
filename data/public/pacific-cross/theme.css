@@ -104,9 +104,19 @@ body {
     border: none;
     padding-bottom: 1em;
     margin-bottom: 50px;
-    box-shadow: none;
-    border-radius: 10px;
+    /* box-shadow: 0px 0px 5px #00000022;;
+    border-radius: 10px; */
     background: #f1f5f9;
+}
+
+#widget-member-main-links,
+#widget-member-main-resources,
+#widget-product-cat-1,
+#widget-my-block-id,
+#widget-member-main-unsubscribe,
+#widget-member-main-subscriptions{
+    box-shadow: 0px 0px 5px #00000022;;
+    border-radius: 10px;
 }
 
 .am-body-content {
@@ -311,6 +321,7 @@ ul.am-tabs li {
 .custom-card::before {
     background: #ffb933;
 }
+
 .custom-card h6 {
     color: #ffb933;
 }
@@ -485,9 +496,11 @@ ul.am-header-menu li ul {
     color: #ffb933;
 }
 
-.subscription-tabs .tab.active{
-    color: #ffb933; /* Adjust to your theme */
-    border-bottom: 2px solid #ffb933; /* Adjust to your theme */
+.subscription-tabs .tab.active {
+    color: #ffb933;
+    /* Adjust to your theme */
+    border-bottom: 2px solid #ffb933;
+    /* Adjust to your theme */
 }
 
 .tb-popover-wrapper:hover .tb-popover-content {
@@ -498,7 +511,7 @@ ul.am-header-menu li ul {
     border-color: transparent transparent #ffffff transparent;
 }
 
-.faq .faq-title{
+.faq .faq-title {
     color: #2a333c;
 }
 
@@ -506,12 +519,12 @@ ul.am-header-menu li ul {
     background-color: #ffffff;
 }
 
-.faq.active{
+.faq.active {
     color: #2a333c;
     background-color: #ffffff;
 }
 
-.faq.active .faq-text{
+.faq.active .faq-text {
     color: #2a333c;
 }
 
@@ -525,26 +538,27 @@ ul.am-header-menu li ul {
     }
 }
 
-ul.am-tabs li.active>a::after, 
+ul.am-tabs li.active>a::after,
 ul.am-tabs li.normal>a:hover::after {
-    background-color: #ffb933; 
+    background-color: #ffb933;
 }
 
-.tb-popover-content{
+.tb-popover-content {
     border-bottom: 3px solid #ffb933;
 }
 
-.am-grid th a.sorted-desc::before{
+.am-grid th a.sorted-desc::before {
     color: #ffb933;
 }
 
-.faq-toggle .fa-plus{
+.faq-toggle .fa-plus {
     color: #ffb933;
 }
 
-.faq.active .faq-toggle .fa-minus{
+.faq.active .faq-toggle .fa-minus {
     color: #ffb933;
 }
+
 .am-basket-preview-actions a {
-background: #ffb933;
+    background: #ffb933;
 }

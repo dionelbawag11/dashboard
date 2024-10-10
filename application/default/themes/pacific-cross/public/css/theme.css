@@ -104,9 +104,19 @@ body {
     border: none;
     padding-bottom: 1em;
     margin-bottom: 50px;
+    /* box-shadow: %content_shadow%;
+    border-radius: %border_radius%px; */
+    background: %page_bg%;
+}
+
+#widget-member-main-links,
+#widget-member-main-resources,
+#widget-product-cat-1,
+#widget-my-block-id,
+#widget-member-main-unsubscribe,
+#widget-member-main-subscriptions{
     box-shadow: %content_shadow%;
     border-radius: %border_radius%px;
-    background: %page_bg%;
 }
 
 .am-body-content {
@@ -311,6 +321,7 @@ ul.am-tabs li {
 .custom-card::before {
     background: %try_color%;
 }
+
 .custom-card h6 {
     color: %try_color%;
 }
@@ -485,9 +496,11 @@ ul.am-header-menu li ul {
     color: %view_color%;
 }
 
-.subscription-tabs .tab.active{
-    color: %subscription_tab_color%; /* Adjust to your theme */
-    border-bottom: 2px solid %subscription_tab_color%; /* Adjust to your theme */
+.subscription-tabs .tab.active {
+    color: %subscription_tab_color%;
+    /* Adjust to your theme */
+    border-bottom: 2px solid %subscription_tab_color%;
+    /* Adjust to your theme */
 }
 
 .tb-popover-wrapper:hover .tb-popover-content {
@@ -498,7 +511,7 @@ ul.am-header-menu li ul {
     border-color: transparent transparent %hover_cart% transparent;
 }
 
-.faq .faq-title{
+.faq .faq-title {
     color: %faq_text%;
 }
 
@@ -506,12 +519,12 @@ ul.am-header-menu li ul {
     background-color: %faq_bg%;
 }
 
-.faq.active{
+.faq.active {
     color: %faq_active_title_text%;
     background-color: %faq_bg_active%;
 }
 
-.faq.active .faq-text{
+.faq.active .faq-text {
     color: %faq_active_text%;
 }
 
@@ -525,26 +538,27 @@ ul.am-header-menu li ul {
     }
 }
 
-ul.am-tabs li.active>a::after, 
+ul.am-tabs li.active>a::after,
 ul.am-tabs li.normal>a:hover::after {
-    background-color: %menu_color%; 
+    background-color: %menu_color%;
 }
 
-.tb-popover-content{
+.tb-popover-content {
     border-bottom: 3px solid %menu_color%;
 }
 
-.am-grid th a.sorted-desc::before{
+.am-grid th a.sorted-desc::before {
     color: %menu_color%;
 }
 
-.faq-toggle .fa-plus{
+.faq-toggle .fa-plus {
     color: %menu_color%;
 }
 
-.faq.active .faq-toggle .fa-minus{
+.faq.active .faq-toggle .fa-minus {
     color: %menu_color%;
 }
+
 .am-basket-preview-actions a {
-background: %btn_color%;
+    background: %btn_color%;
 }
