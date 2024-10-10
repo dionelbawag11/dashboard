@@ -1,4 +1,4 @@
-a:4:{s:4:"data";s:2172:"s:2162:"<div class="admin-last admin-activity">
+a:4:{s:4:"data";s:2173:"s:2163:"<div class="admin-last admin-activity">
     <h2>Recent Activity</h2>
     <div class="am-grid-container">
         <table class="am-grid grid-no-highlight">
@@ -8,7 +8,7 @@ a:4:{s:4:"data";s:2172:"s:2162:"<div class="admin-last admin-activity">
                                                     <strong>Kai Cennat</strong>
         (<a class="link" href="/moodle400/dashboard/admin-users?_u_a=edit&_u_id=1" data-tooltip-url="/moodle400/dashboard/admin-users/card?id=1">kai</a>)<!--
     --> logged in from ::1                        <br />
-                        <time class="admin-activity_event-time" datetime="2024-10-10T05:32:50+00:00" title="10/10/24, 05:32 AM">&#x1f550; 6 min ago</time>                                    </td>
+                        <time class="admin-activity_event-time" datetime="2024-10-10T05:51:01+00:00" title="10/10/24, 05:51 AM">&#x1f550; 26 min ago</time>                                    </td>
             </tr>
                         <tr
                 class="am-grid-row odd admin-activity_event admin-activity_event-signin">
@@ -29,4 +29,4 @@ a:4:{s:4:"data";s:2172:"s:2162:"<div class="admin-last admin-activity">
                     </table>
     </div>
 </div>
-";";s:8:"lifetime";i:2592000;s:6:"expire";i:1731130784;s:8:"priority";i:8;}
+";";s:8:"lifetime";i:2592000;s:6:"expire";i:1731133060;s:8:"priority";i:8;}

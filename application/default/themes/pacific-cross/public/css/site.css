@@ -2525,7 +2525,7 @@ div#moodle-block-id{
     box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
     background: white;
     border-radius: 10px;
-    min-height: 50rem;
+    min-height: 70rem;
   }
   
   .am-form div.am-element-title .comment {
@@ -2845,10 +2845,22 @@ div#moodle-block-id{
     display: none; /* Hide the placeholder when input is focused or has text */
 }
 
-
-/* div#cart-search {
-    display: none;
+.am-basket-preview-actions a {
+  font-size: 15px;
+  padding: .5rem;
+  margin-bottom: .6rem;
+  border-radius: 8px;
+  text-decoration-line: none;
+  color: white;
 }
-div#cart-category-select {
-    display: none;
-} */
+
+.am-basket-preview-actions{
+  padding: .5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+}
+.am-basket-preview-actions-divider {
+  display: none;
+}

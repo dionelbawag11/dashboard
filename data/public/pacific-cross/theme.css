@@ -545,3 +545,6 @@ ul.am-tabs li.normal>a:hover::after {
 .faq.active .faq-toggle .fa-minus{
     color: #ffb933;
 }
+.am-basket-preview-actions a {
+background: #ffb933;
+}
