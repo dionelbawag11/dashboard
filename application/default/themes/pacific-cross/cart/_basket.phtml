@@ -74,7 +74,7 @@ $isViewBasketUrl = ($currentUrl === $viewBasketUrl);
                                         $img_url = $item->tryLoadProduct()->img_cart_path;
                                     else
                                         $img_url = $defaultImg;
-                                    $img_url = $this->url('data/public/' . $img_url);
+                                    $img_url = $this->url('data_1/public/' . $img_url);
                                     ?>
                                     <?php if ($img_url): ?>
                                         <img src="<?php echo $img_url; ?>" alt="Product Image" />
