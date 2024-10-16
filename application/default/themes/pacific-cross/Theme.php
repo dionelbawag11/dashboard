@@ -1071,7 +1071,7 @@ CUT
         $_ = $this->getConfig('version');
         if (file_exists("{$this->getDi()->public_dir}/{$this->getId()}/theme.css")) {
             $view->headLink()
-                ->appendStylesheet($this->getDi()->url("data/public/{$this->getId()}/theme.css", strval($_), false));
+                ->appendStylesheet($this->getDi()->url("data_7/public/{$this->getId()}/theme.css", strval($_), false));
         } else {
             $view->headLink()
                 ->appendStylesheet($this->urlPublicWithVars("css/theme.css" . ($_ ? "?$_" : "")));
@@ -1288,7 +1288,7 @@ CUT
         $t_new = "themes.{$this->getId()}.login_legend_bg";
         $t_c = "themes.{$this->getId()}.login_form_bg_color";
 
-        $url = $this->getDi()->url("data/public/{$after->get($t_id)}", false);
+        $url = $this->getDi()->url("data_7/public/{$after->get($t_id)}", false);
 
         $after->set($t_new, $after->get($t_id) ?
             "url('{$url}') {$after->get($t_c)} center 1em no-repeat" :
@@ -1336,7 +1336,7 @@ CUT
         $t_color = "themes.{$this->getId()}.color";
         $t_repeat = "themes.{$this->getId()}.bg_repeat";
 
-        $url = $this->getDi()->url("data/public/{$after->get($t_id)}", false);
+        $url = $this->getDi()->url("data_7/public/{$after->get($t_id)}", false);
 
         $after->set($t_new, $after->get($t_id) ?
             "url('{$url}') {$after->get($t_color)} top center {$after->get($t_repeat)};" :
@@ -1358,7 +1358,7 @@ CUT
         $t_repeat = "themes.{$this->getId()}.header_bg_repeat";
         $t_new = "themes.{$this->getId()}.header_bg";
 
-        $url = $this->getDi()->url("data/public/{$after->get($t_id)}", false);
+        $url = $this->getDi()->url("data_7/public/{$after->get($t_id)}", false);
 
         $after->set($t_new, $after->get($t_id) ?
             "url('{$url}') {$after->get($t_color)} top center {$after->get($t_repeat)};" :
