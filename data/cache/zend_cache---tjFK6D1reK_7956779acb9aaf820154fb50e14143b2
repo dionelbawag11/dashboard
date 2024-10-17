@@ -1,10 +1,10 @@
 a:4:{s:4:"data";s:552:"s:543:"<h2>Users Report</h2>
 <div class="admin-index-report-wrapper">
     <div class="admin-index-report report-users">
-        <div id='report-e2a55' style='width: 100%; height: 250px;'></div>
+        <div id='report-aa1e1' style='width: 100%; height: 250px;'></div>
 <script type='text/javascript'>
 jQuery(function(){
-    new Morris.Bar({"data":[{"x":"Pending","y0":86},{"x":"Active","y0":29},{"x":"Active (free)","y0":3},{"x":"Expired","y0":0}],"hideHover":"auto","xLabelMargin":10,"gridTextSize":10,"xkey":"x","resize":true,"ykeys":["y0"],"labels":["# of users"],"element":"report-e2a55"});
+    new Morris.Bar({"data":[{"x":"Pending","y0":86},{"x":"Active","y0":29},{"x":"Active (free)","y0":3},{"x":"Expired","y0":0}],"hideHover":"auto","xLabelMargin":10,"gridTextSize":10,"xkey":"x","resize":true,"ykeys":["y0"],"labels":["# of users"],"element":"report-aa1e1"});
 });
 </script>    </div>
-</div>";";s:8:"lifetime";i:2592000;s:6:"expire";i:1731748595;s:8:"priority";i:8;}
+</div>";";s:8:"lifetime";i:2592000;s:6:"expire";i:1731780621;s:8:"priority";i:8;}
