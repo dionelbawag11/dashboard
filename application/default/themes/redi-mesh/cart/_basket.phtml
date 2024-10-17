@@ -1,0 +1,280 @@
+<?php
+$hasImg = false;
+$hasQty = false;
+$defaultImg = $di->config->get('cart.img_cart_default_path');
+foreach ($cart->getItems() as $item) {
+    $hasImg = $hasImg || $item->tryLoadProduct()->img_cart_path || $defaultImg;
+    $hasQty = $hasQty || $item->qty > 1 || $item->variable_qty;
+}
+$paysystems = Am_Di::getInstance()->paysystemList->getAllPublic();
+$baseUrl = Am_Di::getInstance()->request->getBaseUrl(); // e.g., /moodle400/dashboard
+$currentUrl = Am_Di::getInstance()->request->getRequestUri(); // Ensure this is getting the current URL
+$checkoutUrl = $baseUrl . '/cart/checkout'; // e.g., /moodle400/dashboard/cart/checkout
+$viewBasketUrl = $baseUrl . '/cart/view-basket'; // e.g., /moodle400/dashboard/cart/view-basket
+$isCheckoutUrl = ($currentUrl === $checkoutUrl);
+$isViewBasketUrl = ($currentUrl === $viewBasketUrl);
+?>
+<style>
+    .am-basket-img {
+        overflow: hidden;
+        width:
+            <?php echo $di->config->get('cart.img_cart_width', 50); ?>
+            px;
+        height:
+            <?php echo $di->config->get('cart.img_cart_height', 50); ?>
+            px;
+    }
+</style>
+<?php $colspan = $hasQty ? 3 : 1; ?>
+
+<ul class="basket-list" id="basket">
+    <div class="basket-flex">
+        <div class="checkout-top-container">
+            <div class="basket-header">
+                <span class="basket-title"><?php __e('Order Summary') ?></span>
+            </div>
+            <div class="continue-shopping-flex">
+                <form id="checkoutForm" method="post" action="<?php echo $checkoutUrl; ?>">
+                    <?php echo Am_Html::renderArrayAsInputHiddens($_REQUEST); ?>
+                    <?php if ($isCheckoutUrl): // Check if we are on the checkout URL ?>
+                        <div class="am-cart-checkout-buttons">
+                            <div class="hide-container">
+                                <?php if (isset($choosePaysys)): ?>
+                                    <input type="hidden" name="choose-paysys" value="1" />
+                                <?php endif; ?>
+                                <input type="submit" class="am-cart-checkout-buttons-checkout"
+                                    value="<?php __e('Proceed to Checkout') ?>" />
+                            </div>
+                            <input type="button" class="am-cart-checkout-buttons-update"
+                                value="<?php __e('Edit Your Cart') ?>"
+                                onclick="window.location.href = '<?php echo $viewBasketUrl; ?>'" />
+                            <input type="hidden" name='a' value='checkout'>
+                        </div>
+                    <?php endif; ?>
+                </form>
+
+                <?php if ($isViewBasketUrl): // Check if we are on the view basket URL ?>
+                    <div class="am-cart-checkout-buttons" id="checkout-buttons">
+                        <input type="submit" class="am-cart-checkout-buttons-checkout" name="do-checkout"
+                            value="<?php __e('Save') ?>" />
+                        <input type="hidden" name="b" value="<?php p($b) ?>" />
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+        <div class="whatif">
+            <?php foreach ($cart->getItems() as $item): ?>
+                <li class="basket-item">
+                    <div class="basket-item-details">
+                        <div class="basket-container-img">
+                            <?php if ($hasImg): ?>
+                                <div class="basket-item-img">
+                                    <?php
+                                    if ($item->tryLoadProduct()->img_cart_path)
+                                        $img_url = $item->tryLoadProduct()->img_cart_path;
+                                    else
+                                        $img_url = $defaultImg;
+                                    $img_url = $this->url('data_7/public/' . $img_url);
+                                    ?>
+                                    <?php if ($img_url): ?>
+                                        <img src="<?php echo $img_url; ?>" alt="Product Image" />
+                                    <?php endif ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+
+                        <div class="container-flex">
+                            <div class="basket-item-title"><strong><?php p($item->item_title) ?></strong></div>
+                            <div class="basket-item-desc"><?php p($item->item_description) ?></div>
+                            <span class="basket-item-price"><?php p($cart->getCurrency($item->first_price)) ?></span>
+                        </div>
+
+                        <?php if ($isBasket): ?>
+                            <div class="am-basket-delete"><?php if (!$cart->isStick($item)): ?><a href="javascript:;"
+                                        title="<?php __e('Delete') ?>"><input type="checkbox"
+                                            name="d[<?php echo $item->item_id ?>-<?php echo $item->item_type ?>]"
+                                            value="1">&#10005;</a><?php endif ?></div>
+                        <?php endif; ?>
+                        <div class="basket-item-options">
+                            <?php foreach ($item->getOptions() as $optKey => $opt): ?>
+                                <br /><b><i><?php __e($opt['optionLabel']) ?>:</i></b>
+                                <i><?php p(is_array($opt['valueLabel']) ? implode(',', $opt['valueLabel']) : $opt['valueLabel']) ?></i>
+                                <?php if ($opt['first_price'] || $opt['second_price']): ?>
+                                    <i style='color: gray;'><?= $opt['first_price'] > 0 ? '+' : '&minus;' ?>
+                                        <?php
+                                        $o = new stdclass;
+                                        $o->first_price = $opt['first_price'];
+                                        $o->second_price = $opt['second_price'];
+                                        $o->first_period = $invoice->first_period;
+                                        $o->second_period = $invoice->second_period;
+                                        $o->rebill_times = $invoice->rebill_times;
+                                        $o->currency = $invoice->currency;
+                                        $t = new Am_TermsText($o);
+                                        echo $t->getStringForOption();
+                                        ?>
+                                    </i>
+                                <?php endif ?>
+                            <?php endforeach// item->getOptions() ?>
+                        </div>
+
+                    </div>
+
+                    <?php if ($hasQty): ?>
+                        <span class="basket-item-qty">
+                            <?php if ($item->is_countable && $item->variable_qty && $isBasket && !$cart->isStick($item)): ?>
+                                <div class="basket-qty-controls">
+                                    <button class="basket-qty-minus">&minus;</button>
+                                    <?php echo $this->formText("qty[$item->item_id]", $item->qty, ['size' => 1, 'class' => 'basket-qty-val']) ?>
+                                    <button class="basket-qty-plus">&plus;</button>
+                                </div>
+                            <?php else: ?>
+                                <?php p($item->qty) ?>
+                            <?php endif; ?>
+                        </span>
+                        <span class="basket-item-total"><?php p($cart->getCurrency($item->first_total)) ?></span>
+                    <?php endif; ?>
+                </li>
+            <?php endforeach ?>
+        </div>
+        <div class="totals-container">
+            <li class="basket-totals basket-subtotal">
+                <span class="basket-label"><?php __e('Subtotal') ?></span>
+                <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_subtotal)) ?></span>
+            </li>
+
+            <li class="basket-totals basket-discount">
+                <span class="basket-label"><?php __e('Discount') ?></span>
+                <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_discount)) ?></span>
+            </li>
+
+            <li class="basket-totals basket-shipping">
+                <span class="basket-label"><?php __e('Shipping') ?></span>
+                <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_shipping)) ?></span>
+            </li>
+            <li class="basket-totals basket-tax">
+                <span class="basket-label"><?php __e('Tax') ?></span>
+                <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_tax)) ?></span>
+            </li>
+
+            <li class="basket-totals basket-terms">
+                <span class="basket-terms-label"><?php __e('Terms') ?>:</span>
+                <span class="basket-terms-content"><?php echo ___($cart->getInvoice()->getTerms()) ?></span>
+            </li>
+            <li class="basket-totals basket-grandtotal">
+                <span class="basket-label"><?php __e('Total') ?></span>
+                <span class="basket-amount"><?php p($cart->getCurrency($cart->getInvoice()->first_total)) ?></span>
+            </li>
+            <div class="coupon-flex-container">
+                <?php if ($di->config->get('cart.use_coupons')): ?>
+                    <?php if (!$isBasket): ?>
+                        <form method="post" action="<?php echo $this->url('cart/index/view-basket'); ?>">
+                        <?php endif; ?>
+                        <div class="am-cart-checkout-coupon-wrapper">
+                            <?php $showCoupon = $cart->getCouponCode() || !empty($coupon_error); ?>
+                            <?php if (!$showCoupon): ?>
+                                <div class="coupon-text-container">
+                                    <a href="javascript:;" class="local-link"
+                                        onclick="jQuery(this).hide();jQuery('.am-cart-checkout-coupon').show();jQuery('input[name=coupon]').focus()"><?php __e('Have a Coupon? Apply Here') ?></a>
+                                </div> <?php endif; ?>
+
+                                <div class="am-cart-checkout-coupon" <?php echo !$showCoupon ? 'style="display:none"' : '' ?>>
+                                   <div class="am-cart-coupon-text">
+                                   <?php __e('Coupon') ?>:
+                                   </div>
+                                    <?php if ($code = $cart->getCouponCode()): ?>
+                                        <a href="javascript:;" class="local-link"
+                                            onclick="jQuery(this).hide();jQuery('.am-cart-checkout-coupon-input').show();jQuery('input[name=coupon]').focus()"><?php p($code) ?></a>
+                                    <?php endif; ?>
+                                    <div class="am-cart-checkout-coupon-input" <?php echo $cart->getCouponCode() ? 'style="display:none"' : '' ?>>
+                                        <input type="text" name="coupon" value="<?php p($cart->getCouponCode()) ?>" />
+                                        <input type="submit" name="calculate" class="am-cart-checkout-buttons-apply"
+                                            value="<?php __e('Apply') ?>" />
+                                    </div>
+                                    <?php if (!empty($coupon_error)): ?>
+                                        <div class="am-error"><?= $coupon_error ?></div>
+                                    <?php endif ?>
+                                </div>
+                      
+                        </div>
+                        <?php if (!$isBasket): ?>
+                        </form>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+    <div class="basket-flexx">
+        <div class="checkout-final-container">
+            <div class="basket-checkout-title-header-container">
+                <span class="basket-title"><?php __e('Payment Details') ?></span>
+            </div>
+            <div class="continue-shopping-container-header">
+                <div class="am-cart-checkout-buttons">
+                    <div class="hide-container">
+                        <input type="submit" class="am-cart-checkout-buttons-checkout" name="do-checkout"
+                            value="<?php __e('Checkout') ?>" />
+                        <input type="submit" class="am-cart-checkout-buttons-update" name="calculate"
+                            value="<?php __e('Update') ?>" />
+                        <?php if ($isAjax): ?>
+                            <a href="javascript:;" onclick="jQuery('#ajax-basket').amPopup('close');"
+                                class="local-link"><?php __e('Continue Shopping') ?></a>
+                        <?php else: ?>
+                        </div>
+                        <a href="<?php p((isset($b) && $b) ? $b : $this->url('cart', false)) ?>"
+                            class="am-cart-checkout-buttons-continue"><?php __e('Continue Shopping') ?></a>
+                    <?php endif; ?>
+                    <input type="hidden" name="b" value="<?php p($b) ?>" />
+                </div>
+            </div>
+        </div>
+        <h2 class="payment-head-title">
+            <?php
+            if (count($paysystems) > 1):
+                __e('Select Payment Method');
+            elseif (count($paysystems) == 1):
+                __e('Payment Method');
+            endif;
+            ?>
+        </h2>
+        <div class="basket-divider-container">
+            <div id="choose-paysys-wrapper">
+                <div id="ps-errors-container"></div>
+                <div class="am-cart-checkout-paysys">
+                    <?php foreach ($paysystems as $ps): ?>
+                        <div id="am-cart-checkout-paysys-<?= $ps->getId() ?>" class="am-cart-checkout-paysys-item <?php if (!empty($cart->getInvoice()->paysys_id) && ($cart->getInvoice()->paysys_id == $ps->getId()))
+                              echo 'active'; ?>" data-paysys_id='<?php p($ps->getId()); ?>'>
+                            <label for="ps-<?php p($ps->getId()) ?>">
+                                <input type="radio" name="paysys_id" value="<?= $ps->getId() ?>" <?php if (!empty($cart->getInvoice()->paysys_id) && ($cart->getInvoice()->paysys_id == $ps->getId()))
+                                      echo 'checked'; ?>>
+                                <div>
+                                    <span class='am-cart-checkout-paysys-item-title'><strong><?php echo $ps->getTitle() ?>
+                                        </strong><?php echo $ps->getDescription() ?></span>
+                                </div>
+                            </label>
+                        </div>
+                    <?php endforeach ?>
+                </div>
+            </div>
+            <div class="checkout-payment-container">
+                <button id="triggerCheckoutButton">
+                    <i class="fas fa-lock"></i>
+                    Pay
+                    <span class="basket-amount">
+                        <?php p($cart->getCurrency($cart->getInvoice()->first_total)) ?>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</ul>
+
+<script type="text/javascript">
+    jQuery('.am-basket-delete > a').click(function () {
+        jQuery(this).find('input').attr('checked', 'checked');
+        jQuery(this).closest('form').find('.am-cart-checkout-buttons-update').click();
+    });
+
+    document.getElementById('triggerCheckoutButton').addEventListener('click', function () {
+        document.getElementById('checkoutForm').submit(); // Triggers form submission
+    });
+</script>

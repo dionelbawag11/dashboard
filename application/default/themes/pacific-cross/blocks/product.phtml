@@ -9,11 +9,11 @@
             <div class="am-cart-product-content-desc-img-wrapper">
                 <?php if (!empty($displayProductDetails)): ?>
                     <img class="am-cart-product-content-desc-img" style="  display: block;"
-                        src="<?php echo $this->url("data_7/public/{$product->img_detail_path}") ?>"
+                        src="<?php echo $this->url("data/public/{$product->img_detail_path}") ?>"
                         alt="<?php p($product->title) ?>" title="<?php p($product->title) ?>" />
                 <?php else: ?>
                     <a href="<?php p($product_url) ?>"><img class="am-cart-product-content-desc-img"
-                            src="<?php echo $this->url("data_7/public/{$product->img_path}") ?>"
+                            src="<?php echo $this->url("data/public/{$product->img_path}") ?>"
                             alt="<?php p($product->title) ?>" title="<?php p($product->title) ?>" /></a>
                 <?php endif; ?>
             </div>

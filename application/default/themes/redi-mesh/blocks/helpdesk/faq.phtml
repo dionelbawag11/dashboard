@@ -1,0 +1,55 @@
+<?php if ($catActive && $catActive->description): ?>
+    <?php echo $catActive->description; ?>
+<?php endif; ?>
+<?php if (!$catActive && $di->modules->get('helpdesk')->getConfig('show_faq_search')): ?>
+    <?php echo $this->render('blocks/helpdesk/_search-form.phtml') ?>
+<?php endif; ?>
+<div class="faq-container-box">
+<div class="faq-list-container">
+<?php foreach ($faq as $f): ?>
+
+    <div class="faq">
+        <h3 class="faq-title">
+            <?php p($f->title) ?>
+        </h3>
+        <p class="faq-text">
+            <?php echo $f->content; ?>
+        </p>
+        <button class="faq-toggle">
+            <i class="fas fa-plus"></i>
+            <i class="fas fa-minus"></i>
+        </button>
+    </div>
+
+<?php endforeach; ?>
+</div>
+
+<?php if ($categories): ?>
+
+    <div class="am-block" id="faq-block">
+
+            <h1 class="faq-categories-title">
+                FAQ Categories</h1>
+
+        <ul class="am-helpdesk-faq-cat">
+            <?php foreach ($categories as $cat): ?>
+                <li class="am-helpdesk-faq-cat-item">
+                    <h2><a href="<?php echo $this->url('helpdesk/faq/c/' . urlencode($cat)) ?>"><?php p($cat) ?></a></h2>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+ // FAQ toggles
+ const toggles = document.querySelectorAll(".faq-toggle");
+ toggles.forEach(toggle => {
+     toggle.addEventListener("click", () => {
+         toggle.parentElement.classList.toggle("active");
+     });
+ });
+  });
+</script>
