@@ -6,17 +6,6 @@
     </div>
 </div>
 <?php if ($di->config->get('cart.use_coupons') && !$cart->getInvoice()->isZero()) : ?>
-            <h2><?php __e('Coupon Code'); ?></h2>
-            <div class="am-cart-checkout-c">
-                <div class="am-cart-checkout-c-preview" <?php echo $cart->getCouponCode() ? '' : 'style="display:none"' ?>>
-                    <a href="javascript:;" id="coupon-preview" class="local-link" onclick="jQuery(this).closest('div').hide();jQuery('.am-cart-checkout-c-input').show();jQuery('input[name=coupon]').focus()"><?php p($cart->getCouponCode()) ?></a>
-                </div>
-                <div class="am-cart-checkout-c-input" <?php echo $cart->getCouponCode() ? 'style="display:none"' : '' ?>>
-                    <input type="text" name="coupon" value="<?php p($cart->getCouponCode()) ?>" />
-                    <input type="button" class="am-cart-checkout-c-apply" value="<?php __e('Apply') ?>" />
-                </div>
-                <div id="coupon-errors-container"></div>
-            </div>
         <?php endif; ?>
 <script type="text/javascript">
     (function() {

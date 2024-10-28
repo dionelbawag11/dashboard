@@ -1,13 +1,13 @@
 body,
 html {
-    font-size: 14px;
+    font-size: 14px ;
     background: none;
 }
 
 html {
-    background: #f1f5f9;
-    background-size: auto;
-    background-attachment: scroll;
+    background: #f1f5f9 ;
+    background-size: auto ;
+    background-attachment: scroll ;
 }
 
 body {
@@ -22,20 +22,20 @@ body {
 
 .am-footer {
     height: auto;
-    background: #FFFFFF;
+    background: #FFFFFF ;
 }
 
 .am-common {
-    font-family: 'Roboto', san-serif;
-    color: #212121;
+    font-family: 'Roboto', san-serif ;
+    color: #212121 ;
 }
 
 .am-common legend {
-    color: #212121;
+    color: #212121 ;
 }
 
 .am-common a {
-    color: #0079d1;
+    color: #0079d1 ;
     text-decoration-color: #0079d199;
 }
 
@@ -57,8 +57,8 @@ body {
 }
 
 .am-header {
-    background: #fffffff;
-    background-size: auto;
+    background: #0079d1;
+    background-size: auto ;
 }
 
 .am-header .am-header-content-wrapper {
@@ -91,8 +91,8 @@ body {
 }
 
 .am-footer .am-footer-content .am-footer-sm a {
-    color: #0d0d0d;
-    font-size: 18px;
+    color: #0d0d0d ;
+    font-size: 18px ;
 }
 
 .am-body {
@@ -104,9 +104,6 @@ body {
     border: none;
     padding-bottom: 1em;
     margin-bottom: 50px;
-    /* box-shadow: 0px 0px 5px #00000022;;
-    border-radius: 10px; */
-    background: #f1f5f9;
 }
 
 #widget-member-main-links,
@@ -114,9 +111,12 @@ body {
 #widget-product-cat-1,
 #widget-my-block-id,
 #widget-member-main-unsubscribe,
-#widget-member-main-subscriptions{
-    box-shadow: 0px 0px 5px #00000022;;
-    border-radius: 10px;
+#widget-member-main-subscriptions,
+#widget-block_report,
+#widget-subusers
+{
+    box-shadow: none ;
+    border-radius: 10px ;
 }
 
 .am-body-content {
@@ -132,15 +132,15 @@ body {
 }
 
 .am-header .am-header-content .am-header-logo-wrapper {
-    text-align: left;
+    text-align: left ;
 }
 
 .am-main {
-    max-width: 1500px;
+    max-width: 1500px ;
 }
 
 .am-header-content img {
-    width: auto;
+    width: auto ;
 }
 
 .am-footer-actions {
@@ -148,7 +148,7 @@ body {
 }
 
 .am-footer .am-footer-content-wrapper {
-    color: #0d0d0d;
+    color: #0d0d0d ;
     font-size: .8rem;
 }
 
@@ -156,29 +156,29 @@ body {
 .am-footer a:hover,
 .am-footer a:visited,
 .am-footer a:active {
-    color: #0d0d0d
+    color: #0d0d0d ;
 }
 
 .am-user-identity-block {
-    float: right;
+    float: right ;
 }
 
 .am-page-login .am-header {
-    display: block;
+    display: block ;
 }
 
 .am-page-login .am-auth-form legend {
-    background: #f9f9f9;
-    padding-top: 1em;
+    background: #f9f9f9 ;
+    padding-top: 1em ;
 }
 
 .am-page-login .am-auth-form div.am-row {
-    background: #f9f9f9;
+    background: #f9f9f9 ;
 }
 
 .am-page-login .am-body-content-wrapper {
-    background: unset;
-    box-shadow: none;
+    background: unset ;
+    box-shadow: none ;
 }
 
 .am-auth-form form {
@@ -428,7 +428,7 @@ ul.am-tabs li {
 }
 
 ul.am-header-menu a {
-    color: #ff8a80;
+    color: #d1c4e9;
 }
 
 ul.am-header-menu ul a {
@@ -436,7 +436,7 @@ ul.am-header-menu ul a {
 }
 
 ul.am-header-menu>li>a::after {
-    background: #ff8a80;
+    background: #d1c4e9;
     opacity: .4;
 }
 
@@ -498,9 +498,7 @@ ul.am-header-menu li ul {
 
 .subscription-tabs .tab.active {
     color: #ffb933;
-    /* Adjust to your theme */
     border-bottom: 2px solid #ffb933;
-    /* Adjust to your theme */
 }
 
 .tb-popover-wrapper:hover .tb-popover-content {
@@ -512,7 +510,7 @@ ul.am-header-menu li ul {
 }
 
 .faq .faq-title {
-    color: #2a333c;
+    color: #2a333c; 
 }
 
 .faq {
@@ -561,4 +559,8 @@ ul.am-tabs li.normal>a:hover::after {
 
 .am-basket-preview-actions a {
     background: #ffb933;
+}
+
+.pacific-header-menu ul.am-tabs .has-children ul{
+    background: #0079d1;
 }

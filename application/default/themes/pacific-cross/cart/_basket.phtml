@@ -86,7 +86,21 @@ $isViewBasketUrl = ($currentUrl === $viewBasketUrl);
                         <div class="container-flex">
                             <div class="basket-item-title"><strong><?php p($item->item_title) ?></strong></div>
                             <div class="basket-item-desc"><?php p($item->item_description) ?></div>
+                            <div class="basket-pricelist-flex-row">
                             <span class="basket-item-price"><?php p($cart->getCurrency($item->first_price)) ?></span>
+                            <?php if ($hasQty): ?>
+                                <span class="am-basket-qty">
+                                    <?php if ($item->is_countable && $item->variable_qty && $isBasket && !$cart->isStick($item)): ?>
+                                        <div class="am-cart-qty-el">
+                                            <button class="am-cart-qty-el-minus">&minus;</button>
+                                            <?php echo $this->formText("qty[$item->item_id]", $item->qty, ['size' => 1, 'class' => 'basket-qty-val']) ?>
+                                            <button class="am-cart-qty-el-plus">&plus;</button>
+                                        </div>
+                                    <?php endif; ?>
+                                </span>
+                                <span class="basket-item-total"><?php p($cart->getCurrency($item->first_total)) ?></span>
+                            <?php endif; ?>
+                            </div>
                         </div>
 
                         <?php if ($isBasket): ?>
@@ -118,21 +132,6 @@ $isViewBasketUrl = ($currentUrl === $viewBasketUrl);
                         </div>
 
                     </div>
-
-                    <?php if ($hasQty): ?>
-                        <span class="basket-item-qty">
-                            <?php if ($item->is_countable && $item->variable_qty && $isBasket && !$cart->isStick($item)): ?>
-                                <div class="basket-qty-controls">
-                                    <button class="basket-qty-minus">&minus;</button>
-                                    <?php echo $this->formText("qty[$item->item_id]", $item->qty, ['size' => 1, 'class' => 'basket-qty-val']) ?>
-                                    <button class="basket-qty-plus">&plus;</button>
-                                </div>
-                            <?php else: ?>
-                                <?php p($item->qty) ?>
-                            <?php endif; ?>
-                        </span>
-                        <span class="basket-item-total"><?php p($cart->getCurrency($item->first_total)) ?></span>
-                    <?php endif; ?>
                 </li>
             <?php endforeach ?>
         </div>
@@ -177,24 +176,24 @@ $isViewBasketUrl = ($currentUrl === $viewBasketUrl);
                                         onclick="jQuery(this).hide();jQuery('.am-cart-checkout-coupon').show();jQuery('input[name=coupon]').focus()"><?php __e('Have a Coupon? Apply Here') ?></a>
                                 </div> <?php endif; ?>
 
-                                <div class="am-cart-checkout-coupon" <?php echo !$showCoupon ? 'style="display:none"' : '' ?>>
-                                   <div class="am-cart-coupon-text">
-                                   <?php __e('Coupon') ?>:
-                                   </div>
-                                    <?php if ($code = $cart->getCouponCode()): ?>
-                                        <a href="javascript:;" class="local-link"
-                                            onclick="jQuery(this).hide();jQuery('.am-cart-checkout-coupon-input').show();jQuery('input[name=coupon]').focus()"><?php p($code) ?></a>
-                                    <?php endif; ?>
-                                    <div class="am-cart-checkout-coupon-input" <?php echo $cart->getCouponCode() ? 'style="display:none"' : '' ?>>
-                                        <input type="text" name="coupon" value="<?php p($cart->getCouponCode()) ?>" />
-                                        <input type="submit" name="calculate" class="am-cart-checkout-buttons-apply"
-                                            value="<?php __e('Apply') ?>" />
-                                    </div>
-                                    <?php if (!empty($coupon_error)): ?>
-                                        <div class="am-error"><?= $coupon_error ?></div>
-                                    <?php endif ?>
+                            <div class="am-cart-checkout-coupon" <?php echo !$showCoupon ? 'style="display:none"' : '' ?>>
+                                <div class="am-cart-coupon-text">
+                                    <?php __e('Coupon') ?>:
                                 </div>
-                      
+                                <?php if ($code = $cart->getCouponCode()): ?>
+                                    <a href="javascript:;" class="local-link"
+                                        onclick="jQuery(this).hide();jQuery('.am-cart-checkout-coupon-input').show();jQuery('input[name=coupon]').focus()"><?php p($code) ?></a>
+                                <?php endif; ?>
+                                <div class="am-cart-checkout-coupon-input" <?php echo $cart->getCouponCode() ? 'style="display:none"' : '' ?>>
+                                    <input type="text" name="coupon" value="<?php p($cart->getCouponCode()) ?>" />
+                                    <input type="submit" name="calculate" class="am-cart-checkout-buttons-apply"
+                                        value="<?php __e('Apply') ?>" />
+                                </div>
+                                <?php if (!empty($coupon_error)): ?>
+                                    <div class="am-error"><?= $coupon_error ?></div>
+                                <?php endif ?>
+                            </div>
+
                         </div>
                         <?php if (!$isBasket): ?>
                         </form>
@@ -203,7 +202,7 @@ $isViewBasketUrl = ($currentUrl === $viewBasketUrl);
             </div>
         </div>
     </div>
-    <div class="basket-flexx">
+    <div class="basket-flexx <?php echo $isViewBasketUrl ? 'blur-container' : ''; ?>">
         <div class="checkout-final-container">
             <div class="basket-checkout-title-header-container">
                 <span class="basket-title"><?php __e('Payment Details') ?></span>

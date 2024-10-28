@@ -1,0 +1,21 @@
+<?php
+// Get the authentication instance from aMember
+$auth = Am_Di::getInstance()->auth; 
+$user = $auth->getUser(); // Get the current user object
+
+
+// Check if the user is logged in by checking if the user object is not null
+if ($user) : // User is logged in
+    // Check if logo link is configured
+    if ($theme->getConfig('logo_link')) : ?>
+        <a href="<?php p($theme->getConfig('home_url', $di->url('', false))) ?>">
+            <img class="am-header-content-logo" src="<?php p($theme_logo_url) ?>" alt="<?php p($di->config->get('site_title')) ?>" />
+        </a>
+    <?php else : ?>
+        <img class="am-header-content-logo" src="<?php p(@$theme_logo_url ?: $this->_scriptImg('/header-logo.png')) ?>" alt="<?php p($di->config->get('site_title')) ?>" />
+    <?php endif; 
+else : // User is not logged in ?>
+    <a href="<?php p($theme->getConfig('front_page_link', $di->url('', false))) ?>">
+        <img class="am-header-content-logo" src="<?php p(@$theme_logo_url ?: $this->_scriptImg('/header-logo.png')) ?>" alt="<?php p($di->config->get('site_title')) ?>" />
+    </a>
+<?php endif; ?>

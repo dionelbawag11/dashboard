@@ -169,8 +169,8 @@ CUT
     CUT
             );
 
-        $this->addElementColor($fs, 'page_bg_color', "Page Background Color\n" .
-            'you can use any valid <a href="http://www.w3schools.com/html/html_colors.asp" class="link" target="_blank" rel="noreferrer">HTML color</a>, you can find useful color palette <a href="http://www.w3schools.com/TAGS/ref_colornames.asp" class="link" target="_blank" rel="noreferrer">here</a>, keep it empty to make transparent');
+        // $this->addElementColor($fs, 'page_bg_color', "Page Background Color\n" .
+        //     'you can use any valid <a href="http://www.w3schools.com/html/html_colors.asp" class="link" target="_blank" rel="noreferrer">HTML color</a>, you can find useful color palette <a href="http://www.w3schools.com/TAGS/ref_colornames.asp" class="link" target="_blank" rel="noreferrer">here</a>, keep it empty to make transparent');
 
         $this->addElementColor($fs, 'link_color', "Links Color\n" .
             'you can use any valid <a href="http://www.w3schools.com/html/html_colors.asp" class="link" target="_blank" rel="noreferrer">HTML color</a>, you can find useful color palette <a href="http://www.w3schools.com/TAGS/ref_colornames.asp" class="link" target="_blank" rel="noreferrer">here</a>');
@@ -768,14 +768,26 @@ CUT
         $g->addText('home_url', ['style' => 'width:80%', 'placeholder' => $this->getDi()->config->get('root_url')], ['prefix' => 'theme-default'])
             ->default = '';
 
+            $g = $form->addGroup(null, ['class' => 'am-row-highlight'])
+            ->setLabel(___('If the user is not logged in, add hyperlink for Logo'));
+        $g->setSeparator(' ');
+        $g->addAdvCheckbox('front_page_link');
+        $g->addText('front_page_link', ['style' => 'width:80%', 'placeholder' => $this->getDi()->config->get('root_url')], ['prefix' => 'theme-default'])
+            ->default = '';
+
         $form->addScript()
             ->setScript(<<<CUT
-jQuery(function($){
-    $('[type=checkbox][name$=logo_link]').change(function(){
-        $(this).nextAll().toggle(this.checked);
-    }).change();
-});
-CUT
+            jQuery(function($){
+                $('[type=checkbox][name$=logo_link]').change(function(){
+                    $(this).nextAll().toggle(this.checked);
+                }).change();
+            
+                // Add jQuery functionality for front_page_link checkbox
+                $('[type=checkbox][name$=front_page_link]').change(function(){
+                    $(this).nextAll().toggle(this.checked);
+                }).change();
+            });
+            CUT
             );
 
         $form->addRaw()

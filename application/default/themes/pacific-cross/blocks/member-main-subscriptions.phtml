@@ -1,3 +1,20 @@
+
+<?php
+
+if (!defined('INCLUDED_AMEMBER_CONFIG'))
+    die("Direct access to this location is not allowed");
+
+//add new block at position member/main/left
+Am_Di::getInstance()->blocks->remove('member-main-subscriptions');
+Am_Di::getInstance()->blocks->remove('member-main-links');
+
+Am_Di::getInstance()->blocks->add('member/main/right', new Am_Widget_ActiveSubscriptions, 200);
+Am_Di::getInstance()->blocks->add('member/main/left', new Am_Widget_MemberLinks, 200);
+
+
+
+?>
+
 <?php if ($member_products || $member_future_products): ?>
     <ul id="member-subscriptions" class="am-widget-list am-list-subscriptions grid-view">
         <div class="active-subscription-flex-container">
@@ -28,7 +45,7 @@
                         <i class="fa fa-th-large"></i> <!-- Grid icon -->
                     </span>
                     <span id="accordion-view-icon" class="view-icon" onclick="changeView('accordion')">
-                        <i class="fa fa-caret-down"></i> <!-- Accordion icon -->
+                    <i class="fa fa-window-maximize" aria-hidden="true"></i> <!-- Accordion icon -->
                     </span>
                 </div>
             </div>
