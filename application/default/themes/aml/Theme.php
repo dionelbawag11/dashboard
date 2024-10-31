@@ -1,9 +1,9 @@
 <?php
 
-class Am_Theme_PacificCross extends Am_Theme_Default
+class Am_Theme_Aml extends Am_Theme_Default
 {
     protected $publicWithVars = ['css/theme.css'];
-    protected $formThemeClassUser = 'Am_Form_Theme_PacificCross';
+    protected $formThemeClassUser = 'Am_Form_Theme_Aml';
 
     const F_TAHOMA = 'Tahoma',
         F_ARIAL = 'Arial',
@@ -1534,7 +1534,7 @@ CUT
     }
 }
 
-class Am_Form_Theme_PacificCross extends Am_Form_Theme_Default
+class Am_Form_Theme_Aml extends Am_Form_Theme_Default
 {
     public function getTemplates()
     {

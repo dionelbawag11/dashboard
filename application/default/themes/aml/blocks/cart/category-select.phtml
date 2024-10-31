@@ -1,0 +1,16 @@
+<?php /* Shopping cart categories */ ?>
+<?php $this->blocks()->requireJs('cart.js'); ?>
+<?php $this->blocks()->requireCss('cart.css'); ?>
+<div class="am-cart-category-list">
+    <div>
+        <form method="get" action="<?php echo $this->url('cart') ?>">
+            <div class="form-group">
+             <!-- Font Awesome category icon -->
+                <select name="c">
+                    <?php echo $this->formOptions($this->productCategoryOptions, $productCategorySelected) ?>
+                </select>
+         
+            </div>
+        </form>
+    </div>
+</div>
