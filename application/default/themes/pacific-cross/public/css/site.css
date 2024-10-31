@@ -1558,7 +1558,8 @@ div#moodle-block-id {
 #widget-product-cat-1,
 #widget-my-block-id,
 #widget-member-main-unsubscribe,
-#widget-block_report {
+#widget-block_report,
+#widget-subusers {
   background: white;
   padding: 20px;
   margin-bottom: 1.5em;
