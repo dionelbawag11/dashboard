@@ -3,7 +3,7 @@
 class Am_Theme_SolidColor extends Am_Theme_Default
 {
     protected $publicWithVars = ['css/theme.css'];
-    protected $formThemeClassUser = 'Am_Form_Theme_SolidColor';
+    protected $formThemeClassUser = 'w';
 
     const F_TAHOMA = 'Tahoma',
         F_ARIAL = 'Arial',

@@ -1,0 +1,59 @@
+<?php if ($catActive && $catActive->description): ?>
+    <?php echo $catActive->description; ?>
+<?php endif; ?>
+<div class="faq-container-box">
+    <div class="faq-list-container">
+        <?php if (!$catActive && $di->modules->get('helpdesk')->getConfig('show_faq_search')): ?>
+            <?php echo $this->render('blocks/helpdesk/_search-form.phtml') ?>
+        <?php endif; ?>
+        <?php foreach ($faq as $f): ?>
+            <div class="faq">
+                <h3 class="faq-title">
+                    <?php p($f->title) ?>
+                </h3>
+                <p class="faq-text">
+                    <?php echo $f->content; ?>
+                </p>
+                <button class="faq-toggle">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+
+        <?php endforeach; ?>
+    </div>
+    <div class="am-block" id="faq-block">
+        <h1 class="faq-categories-title">FAQ Categories</h1>
+        <ul class="am-helpdesk-faq-cat">
+            <?php
+            $faqCategories = Am_Di::getInstance()->db->select("SELECT faq_category_id, title, description, parent_id, sort_order FROM ?_helpdesk_faq_category");
+
+            usort($faqCategories, function ($a, $b) {
+                return $a['sort_order'] <=> $b['sort_order'];
+            });
+            foreach ($faqCategories as $category) {
+                echo '<li class="am-helpdesk-faq-cat-item">';
+                echo '<h2>';
+                echo '<a href="' . htmlspecialchars($this->url('helpdesk/faq/c/' . urlencode($category['title']))) . '">';
+                p($category['title']);
+                echo '</a>';
+                echo '</h2>';
+                echo '</li>';
+            }
+            ?>
+        </ul>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // FAQ toggles
+        const toggles = document.querySelectorAll(".faq-toggle");
+        toggles.forEach(toggle => {
+            toggle.addEventListener("click", () => {
+                toggle.parentElement.classList.toggle("active");
+            });
+        });
+    });
+</script>

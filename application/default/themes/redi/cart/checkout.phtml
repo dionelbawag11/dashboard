@@ -1,0 +1,6 @@
+<?php
+$title = $di->config->get('site_title') . ' : ' . ___('Checkout');
+$this->setLayout('cart/layout-wide.phtml');
+$isBasket = false;
+?>
+<?php include $this->_script('cart/_checkout.phtml'); ?>

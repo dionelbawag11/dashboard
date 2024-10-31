@@ -1,4 +1,4 @@
-a:4:{s:4:"data";s:6991:"s:6981:"<div class="admin-last admin-lastusers">
+a:4:{s:4:"data";s:6993:"s:6983:"<div class="admin-last admin-lastusers">
     <h2>Last 5 Customers</h2>
     <div class="am-grid-container">
         <table class="am-grid grid-no-highlight">
@@ -15,7 +15,7 @@ a:4:{s:4:"data";s:6991:"s:6981:"<div class="admin-last admin-lastusers">
                     nice@gmail.com</td>
                 <td>
                     <span class="user-status user-status-pending">Pending</span>                </td>
-                <td class="container-width-narrow-hide"><time datetime="2024-10-18T13:52:18+00:00" title="6 days ago">
+                <td class="container-width-narrow-hide"><time datetime="2024-10-18T13:52:18+00:00" title="11 days ago">
                                             10/18/24<br /><small style="color:#aaa">01:52 PM</small>
                                         </time></td>
                 <td>
@@ -24,7 +24,7 @@ a:4:{s:4:"data";s:6991:"s:6981:"<div class="admin-last admin-lastusers">
             <tr class="am-grid-row even">
                 <td colspan="4" class="container-width-narrow-show">
                     <div class="admin-last_time">
-                        &#x1f550; <time datetime="2024-10-18T13:52:18+00:00" title="6 days ago">10/18/24, 01:52 PM</time>
+                        &#x1f550; <time datetime="2024-10-18T13:52:18+00:00" title="11 days ago">10/18/24, 01:52 PM</time>
                     </div>
                 </td>
             </tr>
@@ -112,4 +112,4 @@ a:4:{s:4:"data";s:6991:"s:6981:"<div class="admin-last admin-lastusers">
                     </table>
     </div>
 </div>
-";";s:8:"lifetime";i:2592000;s:6:"expire";i:1732427884;s:8:"priority";i:8;}
+";";s:8:"lifetime";i:2592000;s:6:"expire";i:1732860695;s:8:"priority";i:8;}
